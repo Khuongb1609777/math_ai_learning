@@ -724,4 +724,5 @@ if (typeof document !== 'undefined') {
   }
 }
 
-export default App;
+// Note: App class is exported at definition (line 19: export class App)
+

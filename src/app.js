@@ -16,7 +16,7 @@ import { Header } from './components/Header.js';
 import * as storage from './services/storage.js';
 import { DEFAULT_LESSONS } from './data/lessons.js';
 
-export class App {
+class AppBase {
   constructor() {
     this.state = {
       activeTab: 'explore',
@@ -711,6 +711,58 @@ export class App {
   }
 }
 
+/**
+ * Dual-Mode App Constructor:
+ * - When invoked with `new App()`: Constructs standard AppBase SPA controller.
+ * - When invoked without `new` (e.g. by Vercel Serverless Function runner): Serves static HTML/assets with 200 OK.
+ */
+export function App(options, maybeRes) {
+  if (!(this instanceof App)) {
+    // Invoked without 'new' (Vercel Serverless function fallback handler)
+    return handleServerlessInvocation(options, maybeRes);
+  }
+  return new AppBase();
+}
+
+// Inherit AppBase prototype so `instanceof App` and method calls work seamlessly
+Object.setPrototypeOf(App.prototype, AppBase.prototype);
+Object.getOwnPropertyNames(AppBase.prototype).forEach(prop => {
+  if (prop !== 'constructor') {
+    const desc = Object.getOwnPropertyDescriptor(AppBase.prototype, prop);
+    if (desc) Object.defineProperty(App.prototype, prop, desc);
+  }
+});
+
+function handleServerlessInvocation(req, res) {
+  if (!res || typeof res.writeHead !== 'function') return;
+  try {
+    const fs = globalThis.process?.getBuiltinModule ? globalThis.process.getBuiltinModule('node:fs') : null;
+    const path = globalThis.process?.getBuiltinModule ? globalThis.process.getBuiltinModule('node:path') : null;
+    if (fs && path) {
+      const candidates = [
+        path.resolve('dist/index.html'),
+        path.resolve('public/index.html'),
+        path.resolve('index.html')
+      ];
+      for (const p of candidates) {
+        if (fs.existsSync(p)) {
+          const html = fs.readFileSync(p, 'utf8');
+          res.writeHead(200, {
+            'Content-Type': 'text/html; charset=utf-8',
+            'Cache-Control': 'no-cache'
+          });
+          res.end(html);
+          return;
+        }
+      }
+    }
+  } catch (e) {
+    // Fallback
+  }
+  res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+  res.end('<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url=/index.html"></head><body>Redirecting to Math English AI Learn...</body></html>');
+}
+
 // Auto-bootstrap when document is ready
 if (typeof document !== 'undefined') {
   if (document.readyState === 'loading') {
@@ -724,5 +776,4 @@ if (typeof document !== 'undefined') {
   }
 }
 
-// Note: App class is exported at definition (line 19: export class App)
 

@@ -118,6 +118,37 @@ function countFilesAndSize(dir) {
 const stats = countFilesAndSize(DIST_DIR);
 const sizeMb = (stats.totalBytes / (1024 * 1024)).toFixed(2);
 
+// 7. Generate Vercel Build Output API v3 (.vercel/output)
+const VERCEL_OUTPUT_DIR = path.join(__dirname, '.vercel', 'output');
+const VERCEL_STATIC_DIR = path.join(VERCEL_OUTPUT_DIR, 'static');
+
+try {
+  if (fs.existsSync(VERCEL_OUTPUT_DIR)) {
+    fs.rmSync(VERCEL_OUTPUT_DIR, { recursive: true, force: true });
+  }
+  fs.mkdirSync(VERCEL_STATIC_DIR, { recursive: true });
+
+  // Copy all dist/ contents into .vercel/output/static/
+  fs.cpSync(DIST_DIR, VERCEL_STATIC_DIR, { recursive: true });
+
+  // Write .vercel/output/config.json
+  const vercelConfig = {
+    version: 3,
+    routes: [
+      { handle: 'filesystem' },
+      { src: '/(.*)', dest: '/index.html' }
+    ]
+  };
+  fs.writeFileSync(
+    path.join(VERCEL_OUTPUT_DIR, 'config.json'),
+    JSON.stringify(vercelConfig, null, 2),
+    'utf8'
+  );
+  console.log('⚡ [BUILD] Generated Vercel Build Output API v3 (.vercel/output/)');
+} catch (err) {
+  console.warn('⚠️ [BUILD] Note on .vercel/output:', err.message);
+}
+
 console.log('✅ [BUILD] Build successful!');
 console.log(`📁 [BUILD] Output Directory: ${DIST_DIR}`);
 console.log(`📊 [BUILD] Total Artifacts: ${stats.count} files (~${sizeMb} MB)`);

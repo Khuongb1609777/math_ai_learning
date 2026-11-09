@@ -116,7 +116,7 @@ function resolveFilePath(urlPath) {
 }
 
 // Create native HTTP Server
-const server = http.createServer((req, res) => {
+export function handleRequest(req, res) {
   const method = req.method;
 
   // Set standard security headers
@@ -171,41 +171,46 @@ const server = http.createServer((req, res) => {
     });
     stream.pipe(res);
   });
-});
+}
 
-// Server Startup
-server.listen(PORT, HOST, () => {
-  const formattedHost = HOST === '0.0.0.0' ? 'localhost' : HOST;
-  console.log('╔═══════════════════════════════════════════════════════════════════╗');
-  console.log('║               MATH ENGLISH AI LEARN — SERVER READY                ║');
-  console.log('║       Web App Học Toán Thực Tiễn Tích Hợp Tiếng Anh (Lớp 10)      ║');
-  console.log('║           Cuộc thi Nghiên cứu Khoa học Kỹ thuật (KHKT)            ║');
-  console.log('╠═══════════════════════════════════════════════════════════════════╣');
-  console.log(`║  Local URL:    http://${formattedHost}:${PORT}                           ║`);
-  console.log(`║  Mode:         Zero-Dependency Native HTTP Server (ES Module)     ║`);
-  console.log(`║  Node Version: ${process.version.padEnd(50, ' ')} ║`);
-  console.log(`║  Root Dir:     ${__dirname.slice(-50).padEnd(50, ' ')} ║`);
-  console.log('╚═══════════════════════════════════════════════════════════════════╝');
-  console.log(`[INFO] Static directories served: /public and /src`);
-  console.log(`[INFO] Press Ctrl+C to terminate server.`);
-});
+export const server = http.createServer(handleRequest);
 
-// Graceful Shutdown Handlers
-const shutdown = (signal) => {
-  console.log(`\n[INFO] Received ${signal}. Gracefully shutting down HTTP server...`);
-  server.close(() => {
-    console.log('[INFO] HTTP server successfully closed. Goodbye.');
-    process.exit(0);
+// Standalone Server Startup (only outside Vercel serverless environment)
+if (process.env.VERCEL !== '1') {
+  server.listen(PORT, HOST, () => {
+    const formattedHost = HOST === '0.0.0.0' ? 'localhost' : HOST;
+    console.log('╔═══════════════════════════════════════════════════════════════════╗');
+    console.log('║               MATH ENGLISH AI LEARN — SERVER READY                ║');
+    console.log('║       Web App Học Toán Thực Tiễn Tích Hợp Tiếng Anh (Lớp 10)      ║');
+    console.log('║           Cuộc thi Nghiên cứu Khoa học Kỹ thuật (KHKT)            ║');
+    console.log('╠═══════════════════════════════════════════════════════════════════╣');
+    console.log(`║  Local URL:    http://${formattedHost}:${PORT}                           ║`);
+    console.log(`║  Mode:         Zero-Dependency Native HTTP Server (ES Module)     ║`);
+    console.log(`║  Node Version: ${process.version.padEnd(50, ' ')} ║`);
+    console.log(`║  Root Dir:     ${__dirname.slice(-50).padEnd(50, ' ')} ║`);
+    console.log('╚═══════════════════════════════════════════════════════════════════╝');
+    console.log(`[INFO] Static directories served: /public and /src`);
+    console.log(`[INFO] Press Ctrl+C to terminate server.`);
   });
 
-  // Force close if connections remain open for more than 5s
-  setTimeout(() => {
-    console.error('[WARN] Forcefully terminating active connections after timeout.');
-    process.exit(1);
-  }, 5000).unref();
-};
+  // Graceful Shutdown Handlers
+  const shutdown = (signal) => {
+    console.log(`\n[INFO] Received ${signal}. Gracefully shutting down HTTP server...`);
+    server.close(() => {
+      console.log('[INFO] HTTP server successfully closed. Goodbye.');
+      process.exit(0);
+    });
 
-process.on('SIGINT', () => shutdown('SIGINT'));
-process.on('SIGTERM', () => shutdown('SIGTERM'));
+    setTimeout(() => {
+      console.error('[WARN] Forcefully terminating active connections after timeout.');
+      process.exit(1);
+    }, 5000).unref();
+  };
 
-export default server;
+  process.on('SIGINT', () => shutdown('SIGINT'));
+  process.on('SIGTERM', () => shutdown('SIGTERM'));
+}
+
+export default function handler(req, res) {
+  return handleRequest(req, res);
+}

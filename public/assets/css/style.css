@@ -1054,10 +1054,23 @@ button {
 .pb-6 { padding-bottom: 1.5rem; }
 .pb-12 { padding-bottom: 3rem; }
 .pb-16 { padding-bottom: 4rem; }
+.pl-2 { padding-left: 0.5rem; }
+.pl-3 { padding-left: 0.75rem; }
 .pl-3\.5 { padding-left: 0.875rem; }
+.pl-4 { padding-left: 1rem; }
+.pl-6 { padding-left: 1.5rem; }
+.pl-8 { padding-left: 2rem; }
+.pl-9 { padding-left: 2.25rem; }
 .pl-10 { padding-left: 2.5rem; }
+.pl-12 { padding-left: 3rem; }
+.pr-2 { padding-right: 0.5rem; }
 .pr-3 { padding-right: 0.75rem; }
+.pr-4 { padding-right: 1rem; }
+.pr-6 { padding-right: 1.5rem; }
+.pr-8 { padding-right: 2rem; }
+.pr-9 { padding-right: 2.25rem; }
 .pr-10 { padding-right: 2.5rem; }
+.pr-12 { padding-right: 3rem; }
 
 /* Space-y utilities */
 .space-y-1 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.25rem; }

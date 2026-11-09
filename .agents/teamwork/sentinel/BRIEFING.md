@@ -1,41 +1,36 @@
-# BRIEFING — 2026-11-09T06:56:00Z
+# BRIEFING — 2026-11-09T15:20:30Z
 
 ## Mission
-Coordinate and monitor the UI bug fixes and navigation updates for KHKT showcase across Header, Showcase page, Collection Explorer, and Lesson Player.
+Orchestrate and supervise team execution for standardizing Math-English (CLIL) Grade 10 platform: fix math LaTeX rendering, scrub school/competition references, rename navigation tab, replace card image, and maintain 100% test suite pass rate. Fast-track execution per urgent user request.
 
 ## 🔒 My Identity
 - Archetype: sentinel
 - Working directory: /Users/mac/Desktop/math_english_ai_learn/.agents/teamwork/sentinel/
-- Orchestrator: 87074200-71b1-4f5c-8806-1baad93026e9
-- Active Orchestrator / SWE agent: 6601aa4a-fdd6-41f8-b947-7f2febe5a39c (teamwork_swe)
-- Victory Auditor: 46967bc6-bd09-40b2-ae3e-61b4021eccee (teamwork_victory_auditor)
+- Orchestrator: 559f2cd3-ae02-4c00-8d7c-b02e81e16856
+- Victory Auditor: [to be spawned on victory claim]
 
 ## 🔒 Key Constraints
 - No technical decisions — relay only
 - Victory Audit is MANDATORY before reporting completion
-- The team must NOT: copy code from existing open-source projects for core logic
-- Integrity mode: demo
-- Integrity mode: development (from approved task prompt)
-- Single self-contained fix; keep it small and focused
+- R1: Math Rendering: Clean render of all math symbols and formulas (e.g. ^\circ, \widehat{CBD}, \text{ m}), no raw LaTeX errors
+- R2: Generic Content & Branding: Completely scrub THPT Trần Văn Kiết, Vĩnh Long, Bến Tre, KHKT 2026-2027, Phạm Nguyễn Ti Na, Lê Thanh Tâm, Thông tư 84/2026/TT-BGDĐT; rename tab to "Giới thiệu phương pháp"
+- R3: Visual Assets: Remove school logo, replace card 2 image with parabola/arch bridge simulation image
+- R4: Automated Tests: 100% pass rate on `npm test` and `node tests/e2e/runner.js`
+- Fast-track directive: Wrap up survey immediately, dispatch Worker for full R1-R4 implementation, 100% pass tests, prepare for quick commit/push
 
 ## User Context
-- **Last user request**: Approved task prompt received. Fix UI bugs and update navigation in Header.js, KhktShowcasePage.js, CollectionExplorer.js, LessonPlayer.js.
-- **Pending clarifications**: none
-- **Delivered results**: UI bug fixes & navigation updates completed, verified across 3 reviewer rounds and confirmed by independent victory auditor (324/324 unit tests, 175/175 E2E tests PASS).
+- **Last user request**: "Làm nhanh bước cuối đi, push code nhanh". Wrap up survey immediately, dispatch Worker, pass all tests 100%, prepare code push.
+- **Pending clarifications**: [none]
+- **Delivered results**: Relayed urgent directive to orchestrator.
 
 ## Project Status
-- **Phase**: complete
-- **Route**: SWE Light -> teamwork_swe (conversationId: 6601aa4a-fdd6-41f8-b947-7f2febe5a39c)
-- **Crons**: task-26, task-27 (to be killed upon completion)
+- **Phase**: in progress (fast-tracking Phase 2 Worker dispatch)
+- **Routing Decision**: General path -> `teamwork_orchestrator`
 
 ## Victory Audit Status
-- **Triggered**: yes
-- **Auditor**: 46967bc6-bd09-40b2-ae3e-61b4021eccee
-- **Verdict**: VICTORY CONFIRMED
+- **Triggered**: no
+- **Verdict**: pending
 - **Retry count**: 0
 
 ## Artifact Index
-- .agents/teamwork/ORIGINAL_REQUEST.md — Authoritative user intent, follow-ups, and acceptance criteria
-- .agents/teamwork/swe_1/handoff.md — SWE light orchestrator handoff report
-- .agents/teamwork/sentinel_victory_auditor/handoff.md — Independent auditor handoff report
-- .agents/teamwork/sentinel/handoff.md — Sentinel handoff report
+- /Users/mac/Desktop/math_english_ai_learn/.agents/teamwork/ORIGINAL_REQUEST.md — Authoritative user request

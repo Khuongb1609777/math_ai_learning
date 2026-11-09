@@ -51,7 +51,7 @@ export class AuthoringStudio {
       grade: '10',
       difficulty: 'Medium',
       estimatedMinutes: 15,
-      thumbnail: '/assets/khkt/image1.png',
+      thumbnail: '/assets/khkt/parabolic_arch.png',
       realWorldContextVi: 'Bối cảnh thực tế ngoài hiện trường cần đo đạc gián tiếp các đại lượng hình học.',
       realWorldContextEn: 'Real-world field situation requiring indirect measurement of geometrical quantities.',
       status: 'DRAFT',
@@ -201,7 +201,7 @@ export class AuthoringStudio {
         descriptionVi: rule.descriptionVi,
         descriptionEn: rule.descriptionEn,
         passed: true,
-        verifiedBy: 'Giáo viên hướng dẫn & Học sinh KHKT',
+        verifiedBy: 'Tổ Chuyên môn Toán - Tiếng Anh (CLIL)',
         notes: 'Đã đối chiếu 100% khớp dữ liệu đề bài và thuật ngữ chuyên ngành.'
       }))
     };
@@ -229,7 +229,7 @@ export class AuthoringStudio {
         type: 'success',
         text: this.language === 'en'
           ? '🎉 Verification 10/10 PASS! Lesson is certified & ready to publish.'
-          : '🎉 Kiểm chứng 2 lớp ĐẠT 10/10! Bài học đã được cấp chứng chỉ chất lượng KHKT.'
+          : '🎉 Kiểm chứng 2 lớp ĐẠT 10/10! Bài học đã được cấp chứng chỉ chất lượng chuẩn CLIL.'
       };
     } else {
       this.draftLesson.status = 'DRAFT';
@@ -291,10 +291,10 @@ export class AuthoringStudio {
             </span>
             <div>
               <h2 class="text-base font-extrabold text-slate-900 leading-tight">
-                ${isEn ? 'KHKT CLIL Authoring Studio' : 'Xưởng Biên Soạn Bài Học & Cổng Kiểm Chứng 2 Lớp'}
+                ${isEn ? 'CLIL Authoring Studio' : 'Xưởng Biên Soạn Bài Học & Cổng Kiểm Chứng 2 Lớp'}
               </h2>
               <div class="text-xs text-slate-500">
-                ${isEn ? 'Standardized 5-Scene Storyboard & Dual-Layer Verification' : 'Chuẩn hóa quy trình 5 phân cảnh & Bảng kiểm 10 tiêu chuẩn KHKT'}
+                ${isEn ? 'Standardized 5-Scene Storyboard & Dual-Layer Verification' : 'Chuẩn hóa quy trình 5 phân cảnh & Bảng kiểm 10 tiêu chuẩn CLIL'}
               </div>
             </div>
           </div>
@@ -367,7 +367,7 @@ export class AuthoringStudio {
           </button>
           ${this.certificateData ? `
             <button type="button" class="subtab-btn px-4 py-2.5 font-bold text-sm border-b-2 transition ${this.activeSubTab === 'certificate' ? 'border-amber-600 text-amber-900' : 'border-transparent text-amber-700 hover:text-amber-900'}" data-subtab="certificate">
-              📜 ${isEn ? 'KHKT Certificate' : 'Chứng chỉ chất lượng'}
+              📜 ${isEn ? 'Quality Certificate' : 'Chứng chỉ chất lượng'}
             </button>
           ` : ''}
         </div>
@@ -527,21 +527,21 @@ export class AuthoringStudio {
           </div>
         ` : ''}
 
-        <!-- Tab 4: KHKT Certificate -->
+        <!-- Tab 4: Quality Certificate -->
         ${this.activeSubTab === 'certificate' && this.certificateData ? `
           <div class="p-8 bg-gradient-to-br from-amber-50 via-white to-amber-50 rounded-3xl border-4 border-amber-400 shadow-2xl max-w-3xl mx-auto text-center space-y-6 relative overflow-hidden animate-scaleIn">
             <div class="text-xs font-bold tracking-widest text-amber-800 uppercase">
-              SỞ GIÁO DỤC VÀ ĐÀO TẠO VĨNH LONG • THPT TRẦN VĂN KIẾT
+              NỀN TẢNG HỌC TẬP TOÁN - TIẾNG ANH (CLIL) LỚP 10 TIÊU CHUẨN
             </div>
             <div class="text-3xl font-black text-blue-950 tracking-tight">
-              CHỨNG NHẬN HỌC LIỆU SỐ ĐẠT CHUẨN KHKT
+              CHỨNG NHẬN HỌC LIỆU SỐ ĐẠT CHUẨN CLIL
             </div>
             <div class="text-sm text-slate-600 max-w-xl mx-auto leading-relaxed">
               Xác nhận bài học đã vượt qua quy trình kiểm chứng 2 lớp độc lập (10/10 tiêu chí), đáp ứng 100% tính chính xác toán học thực tế và chuẩn ngữ nghĩa tiếng Anh chuyên ngành (CLIL).
             </div>
 
             <div class="p-6 bg-white/80 rounded-2xl border border-amber-300 max-w-lg mx-auto text-left space-y-2 text-xs">
-              <div><strong>Mã chứng chỉ:</strong> <span class="font-mono text-blue-900">${this.certificateData.certificateId || 'KHKT-CERT-2026-001'}</span></div>
+              <div><strong>Mã chứng chỉ:</strong> <span class="font-mono text-blue-900">${this.certificateData.certificateId || 'CLIL-CERT-2026-001'}</span></div>
               <div><strong>Tên bài học:</strong> <span>${lesson.titleVi}</span></div>
               <div><strong>Chủ đề:</strong> <span>${lesson.topicTitleVi} (Toán 10)</span></div>
               <div><strong>Kết quả kiểm chứng:</strong> <span class="text-emerald-700 font-bold">10/10 TIÊU CHÍ ĐẠT XUẤT SẮC (100%)</span></div>

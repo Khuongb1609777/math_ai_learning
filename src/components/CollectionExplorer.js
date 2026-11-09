@@ -291,7 +291,7 @@ export class CollectionExplorer {
           <div class="relative z-10 max-w-3xl text-left flex flex-col items-start">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-800/80 border border-blue-700/60 text-xs font-semibold text-blue-200 mb-3 text-left">
               <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              DỰ ÁN KHKT 2026-2027 • TRƯỜNG THPT TRẦN VĂN KIẾT
+              NỀN TẢNG HỌC TẬP TOÁN - TIẾNG ANH (CLIL) LỚP 10 TIÊU CHUẨN
             </div>
             <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mb-2 text-left">
               Bộ Sưu Tập Bài Toán Thực Tế Lớp 10 (CLIL)
@@ -313,7 +313,7 @@ export class CollectionExplorer {
 
             <div class="pt-3 text-left">
               <button type="button" class="btn-go-showcase-page inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-xs shadow-md transition">
-                🏆 Xem Trang Thuyết Minh Nghiên Cứu KHKT (N=400) →
+                📘 Giới thiệu Phương pháp Dạy & Học CLIL (N=400) →
               </button>
             </div>
           </div>

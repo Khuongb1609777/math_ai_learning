@@ -132,7 +132,7 @@ export class LearnerSurvey {
         <div class="bg-gradient-to-r from-blue-900 via-indigo-900 to-purple-900 text-white rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden">
           <div class="relative z-10 max-w-2xl space-y-3">
             <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-amber-400 text-blue-950 uppercase tracking-wider shadow-sm">
-              📋 ${isEn ? 'KHKT Research Instrument' : 'Mẫu Phiếu Phản Hồi Học Sinh (KHKT)'}
+              📋 ${isEn ? 'Standardized Survey Instrument' : 'Mẫu Phiếu Phản Hồi Trải Nghiệm Học Tập'}
             </span>
             <h1 class="text-2xl sm:text-4xl font-black tracking-tight leading-tight">
               ${isEn ? 'Bilingual Learner Experience Survey' : 'Khảo Sát Đánh Giá Trải Nghiệm Học Toán Song Ngữ'}

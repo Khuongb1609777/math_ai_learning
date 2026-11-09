@@ -1,61 +1,54 @@
 # Original User Request
 
-## Initial Request — 2026-11-09T05:28:15Z
+## Initial Request — 2026-11-09T14:25:35Z
 
-This is a single self-contained fix; keep it small and focused.
-Sửa các lỗi giao diện và cập nhật điều hướng (Header, Showcase page, Collection Explorer, Lesson Player) phục vụ trình diễn đề án Khoa học Kỹ thuật (KHKT) cho ứng dụng học Toán thực tiễn tích hợp tiếng Anh (CLIL) lớp 10.
+Tập hợp thành viên đội. Xử lý các vấn đề hiển thị công thức toán học, chuẩn hóa nội dung và thay thế hình ảnh cho nền tảng học tập Toán - Tiếng Anh (CLIL) Lớp 10 tiêu chuẩn: sửa các ký hiệu toán học bị lỗi render, loại bỏ toàn bộ thông tin đích danh trường THPT Trần Văn Kiết và cuộc thi KHKT, đổi tên tab điều hướng thành "Giới thiệu phương pháp", và thay ảnh logo trường bằng ảnh mô phỏng kiến trúc cổng vòm/parabol.
 
 Working directory: /Users/mac/Desktop/math_english_ai_learn
 Integrity mode: development
 
 ## Verification Resources
-- Unit and adversarial test suites: `npm test` (bao gồm `tests/search_filter_adversarial.test.js`, `tests/modal_state_adversarial.test.js`, `tests/modal_deep_stress_adversarial.test.js`)
+- Unit test suite: `npm test`
 - E2E test runner: `node tests/e2e/runner.js`
-- Reference screenshots: `media_1794200401668_df156d84.png`, `media_1794200401690_54c8f1aa.png`, `media_1794200403382_951a45e5.png`, `media_1794200444100_441c6955.png`, `media_1794200467631_f9b50139.png`
+- Reference image: `media_1794232598708_d003594b.png`
 
 ## Requirements
 
-### R1. Sửa lỗi Logo và cập nhật Header navigation
-Trong `src/components/Header.js`:
-- Khắc phục lỗi logo thương hiệu ∑ bị bẹp/méo, đặt kích thước và tỉ lệ hiển thị vuông chuẩn 40x40px (`width: 40px; height: 40px; min-width: 40px; min-height: 40px; border-radius: 12px; aspect-ratio: 1 / 1; flex-shrink: 0; display: flex; align-items: center; justify-content: center;`).
-- Bỏ toàn bộ icon trong các mục điều hướng ở header.
-- Cập nhật 4 mục điều hướng: "Bài học" (data-nav="explore"), "Thực hành" (data-nav="player"), "Bài tập" (data-nav="quiz"), "Giới thiệu đề án" (data-nav="showcase").
-- Gỡ bỏ hoàn toàn 2 mục "Khảo sát" (data-nav="survey") và "Biên soạn bài học" (data-nav="studio") trên cả Desktop nav và Mobile menu drawer.
-- Đảm bảo tất cả unit test và adversarial test của Header tiếp tục pass.
+### R1. Sửa lỗi render ký hiệu và công thức toán học
+Kiểm tra và xử lý triệt để các ký hiệu và công thức toán học bị lỗi hiển thị (ví dụ: `^\circ`, `\widehat{CBD} = 63^\circ`, `\text{ m}`, `C \text{ is inaccessible (không thể tiếp cận)}`). Đảm bảo công thức toán học được render sạch sẽ, đúng chuẩn, dễ đọc và không hiển thị raw LaTeX code lỗi ra màn hình cho người học.
 
-### R2. Khắc phục lỗi hiển thị 'undefined' trên trang Giới thiệu đề án
-Trong `src/components/KhktShowcasePage.js`:
-- Sửa lỗi hiển thị text 'undefined' khi render 7 bước sư phạm (lặp qua `SEVEN_STEP_PEDAGOGY`).
-- Chuẩn hóa việc truy xuất thuộc tính từ `src/data/khkt_data.js` (kiểm tra `title` vs `titleVi`, `description` vs `descriptionVi`, v.v.) và bổ sung giá trị dự phòng (fallback) để giao diện không bao giờ hiển thị chữ 'undefined'.
+### R2. Chuẩn hóa nội dung, gỡ bỏ thông tin đích danh và cập nhật điều hướng
+Gỡ bỏ hoàn toàn mọi thông tin liên quan tới: Trường THPT Trần Văn Kiết, Vĩnh Long, Bến Tre; Dự án Cuộc thi Nghiên cứu Khoa học Kỹ thuật (KHKT) 2026-2027; Tác giả Phạm Nguyễn Ti Na (10A1), Hướng dẫn Lê Thanh Tâm; Tuân thủ Thông tư 84/2026/TT-BGDĐT.
+Viết lại nội dung chung chung theo hướng sản phẩm/nền tảng học tập Toán - Tiếng Anh (CLIL) Lớp 10 tiêu chuẩn, không chỉ rõ cuộc thi hay đích danh cá nhân/trường học nào.
+Đổi tên tab "Giới thiệu đề án" / showcase trên thanh điều hướng thành "Giới thiệu phương pháp".
 
-### R3. Canh trái card Hero và tối ưu hiển thị ảnh card bài học
-Trong `src/components/CollectionExplorer.js`:
-- Canh sát lề trái toàn bộ nội dung khối card DỰ ÁN KHKT 2026-2027 • TRƯỜNG THPT TRẦN VĂN KIẾT (`.explorer-hero`), loại bỏ auto-centering hoặc lệch margin bên phải (`text-left`, `items-start`).
-- Tăng chiều cao vùng chứa hình ảnh của các card bài học (khoảng 230px - 240px). Đảm bảo hình ảnh hiển thị sắc nét, căn giữa, không bị méo (`object-fit: contain; max-height: 100%; max-width: 100%; width: auto; height: auto;`).
-- Đảm bảo các huy hiệu (Toán 10, Độ khó, Thời lượng) được bố trí gọn gàng, không che khuất đồ họa chính của bài học.
+### R3. Thay thế ảnh logo trường bằng ảnh mô phỏng bài toán
+Gỡ bỏ hoàn toàn hình ảnh logo trường THPT Trần Văn Kiết. Tại card bài học số 2 ("Cổng chào Parabol và Giới hạn chiều cao xe tải"), thay thế hình ảnh logo trường bằng hình ảnh đồ họa mô phỏng kiến trúc cổng vòm / cầu parabol phù hợp với bài toán thực tế.
 
-### R4. Sửa lỗi cắt chữ huy hiệu phân cảnh Lesson Player
-Trong `src/components/LessonPlayer.js`:
-- Khắc phục lỗi vỡ/cắt chữ (text clipping) bên trong huy hiệu phân cảnh "Màn 1" (scene badge), căn chỉnh font-size, line-height và padding cho vừa vặn trong huy hiệu.
+### R4. Bảo toàn tính toàn vẹn hệ thống kiểm thử
+Duy trì tỷ lệ đạt 100% khi chạy toàn bộ test suite (`npm test` và `node tests/e2e/runner.js`). Cập nhật các test assertion tương ứng nếu có thay đổi về nhãn điều hướng hoặc nội dung đã chuẩn hóa.
 
 ## Acceptance Criteria
 
-### Header & Navigation
-- [ ] Logo ∑ hiển thị đúng kích thước 40x40px, aspect-ratio 1:1, căn giữa hoàn hảo, không bị méo lệch hay bẹp theo chiều ngang/dọc.
-- [ ] Header (desktop và mobile menu drawer) hiển thị đúng 4 mục điều hướng không chứa icon: "Bài học", "Thực hành", "Bài tập", "Giới thiệu đề án".
-- [ ] Các mục "Khảo sát" và "Biên soạn" không còn hiển thị trên desktop header cũng như mobile drawer.
-- [ ] Các bài test Header trong `tests/search_filter_adversarial.test.js`, `tests/modal_state_adversarial.test.js`, `tests/modal_deep_stress_adversarial.test.js` đạt 100% pass.
+### Math Rendering
+- [ ] Mọi công thức và ký hiệu toán học (bao gồm `^\circ`, `\widehat{CBD}`, `\text{ m}`, các chuỗi text lồng trong công thức) được render sạch sẽ, đúng định dạng toán học, dễ đọc cho người học.
+- [ ] Không hiển thị raw LaTeX code lỗi (như `^\circ`, `\text{...}`) ra giao diện người dùng.
 
-### Showcase Page
-- [ ] Khối 7 bước sư phạm trong `KhktShowcasePage.js` hiển thị đầy đủ thông tin, không xuất hiện bất kỳ chuỗi 'undefined' nào trên giao diện.
+### Generic Content & Branding
+- [ ] Không còn xuất hiện các cụm từ "THPT Trần Văn Kiết", "Trường THPT Trần Văn Kiết", "Vĩnh Long", "Bến Tre", "Cuộc thi Nghiên cứu Khoa học Kỹ thuật (KHKT) 2026-2027", "Phạm Nguyễn Ti Na", "Lê Thanh Tâm", "Thông tư 84/2026/TT-BGDĐT" trên toàn bộ giao diện và dữ liệu ứng dụng.
+- [ ] Nội dung giới thiệu thể hiện đúng định vị nền tảng học tập Toán - Tiếng Anh (CLIL) Lớp 10 tiêu chuẩn.
+- [ ] Tab điều hướng trên Header (cả desktop và mobile menu) hiển thị tên "Giới thiệu phương pháp" thay cho "Giới thiệu đề án".
 
-### Collection Explorer
-- [ ] Toàn bộ nội dung trong card DỰ ÁN KHKT 2026-2027 được canh sát lề trái hoàn chỉnh.
-- [ ] Vùng chứa ảnh của card bài học có chiều cao khoảng 230-240px, ảnh rõ nét, giữ đúng tỷ lệ, căn giữa, không che lấp thông tin huy hiệu.
-
-### Lesson Player
-- [ ] Huy hiệu phân cảnh "Màn 1" hiển thị chữ đầy đủ, không bị cắt xén viền trên/dưới hay tràn lề.
+### Visual Assets & Simulation Image
+- [ ] Không còn hiển thị logo trường THPT Trần Văn Kiết trên bất kỳ thành phần nào của giao diện.
+- [ ] Card bài học số 2 ("Cổng chào Parabol và Giới hạn chiều cao xe tải") hiển thị ảnh mô phỏng kiến trúc cổng vòm/cầu parabol trực quan thay thế cho logo trường.
 
 ### Automated Test Verification
-- [ ] Lệnh `npm test` chạy thành công và đạt 100% pass across all tests.
-- [ ] Lệnh `node tests/e2e/runner.js` chạy thành công và đạt 100% pass across all tests.
+- [ ] Lệnh `npm test` thực thi thành công với tỷ lệ pass 100%.
+- [ ] Lệnh `node tests/e2e/runner.js` thực thi thành công với tỷ lệ pass 100%.
+
+
+## Follow-up — 2026-11-09T15:19:47Z
+
+User yêu cầu: "Làm nhanh bước cuối đi, push code nhanh".
+Hãy kết thúc khảo sát ngay lập tức, dispatch Worker tiến hành áp dụng toàn bộ các thay đổi R1, R2, R3, R4 vào mã nguồn, chạy kiểm thử xác nhận 100% pass và sẵn sàng commit/push code lên Git thật nhanh. Không kéo dài thêm các vòng khảo sát.

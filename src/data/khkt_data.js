@@ -1,37 +1,31 @@
 /**
- * @fileoverview Research background data and metadata from the KHKT Science & Technology project:
- * "Ứng dụng Trí tuệ nhân tạo phát triển Video song ngữ học Toán thực tiễn"
- * Author: Phạm Nguyễn Ti Na (10A1, THPT Trần Văn Kiết, Vĩnh Long)
- * Advisor: Lê Thanh Tâm
- * Reference: Thông tư 84/2026/TT-BGDĐT & GDPT 2018
+ * @fileoverview Research background data and metadata for:
+ * "Nền tảng học tập Toán - Tiếng Anh (CLIL) Lớp 10 tiêu chuẩn"
+ * Author: Ban Biên soạn Học liệu số CLIL
+ * Reference: GDPT 2018 & Phương pháp CLIL
  */
 
 export const KHKT_METADATA = {
-  projectTitleVi: "Ứng dụng Trí tuệ nhân tạo phát triển Video song ngữ học Toán thực tiễn",
-  projectTitleEn: "Application of Artificial Intelligence in Developing Bilingual Videos for Real-World Mathematics Education",
-  competition: "Cuộc thi Nghiên cứu Khoa học Kỹ thuật cấp Quốc gia dành cho học sinh trung học năm học 2026 – 2027",
+  projectTitleVi: "Ứng dụng Trí tuệ nhân tạo phát triển Học liệu số song ngữ học Toán thực tiễn",
+  projectTitleEn: "Application of Artificial Intelligence in Developing Bilingual Digital Courseware for Real-World Mathematics Education",
+  competition: "Chương trình Giáo dục Phổ thông 2018 — Nền tảng học liệu số Toán - Tiếng Anh (CLIL)",
   fieldVi: "Công nghệ thông tin (Phần mềm hệ thống & Học liệu số)",
   fieldEn: "Information Technology (System Software & Digital Educational Resources)",
   author: {
-    fullName: "Phạm Nguyễn Ti Na",
-    grade: "10A1",
-    school: "Trường THCS & THPT Trần Văn Kiết",
-    district: "Huyện Chợ Lách",
-    province: "Tỉnh Vĩnh Long"
+    fullName: "Ban Biên soạn Học liệu số",
+    grade: "Lớp 10",
+    school: "Nền tảng học tập Toán - Tiếng Anh (CLIL) Lớp 10 tiêu chuẩn",
+    district: "",
+    province: ""
   },
   advisor: {
-    fullName: "Lê Thanh Tâm",
-    role: "Giáo viên hướng dẫn nghiên cứu",
-    institution: "Trường THCS & THPT Trần Văn Kiết"
+    fullName: "Hội đồng Chuyên môn CLIL",
+    role: "Hội đồng Thẩm định & Hướng dẫn Chuyên môn",
+    institution: "Hội đồng Chuyên môn Toán - Tiếng Anh"
   },
   implementationPeriod: "07/09/2026 – 20/01/2027",
   documentDate: "2026-11-06",
   legalBasis: [
-    {
-      code: "Thông tư 84/2026/TT-BGDĐT",
-      date: "30/09/2026",
-      title: "Quy chế Cuộc thi nghiên cứu khoa học, kỹ thuật cấp quốc gia dành cho học sinh THCS và THPT"
-    },
     {
       code: "Thông tư 32/2018/TT-BGDĐT",
       date: "26/12/2018",
@@ -85,7 +79,7 @@ export const SEVEN_STEP_PEDAGOGY = [
     nameVi: "Lựa chọn bài toán thực tế",
     nameEn: "Real-World Problem Selection",
     objectiveVi: "Tuyển chọn bài toán thực tế trọng tâm môn Toán 10 (Hệ thức lượng, Parabol, Tối ưu hóa) có ngữ cảnh đời sống phong phú.",
-    inputsVi: "Ngân hàng đề THPT, SGK mới (Cánh Diều, KNTT, CTST), đề thi KHKT.",
+    inputsVi: "Ngân hàng đề THPT, SGK mới (Cánh Diều, KNTT, CTST), ngân hàng đề bài thực tế tiêu chuẩn.",
     outputsVi: "Đề bài thực tế gốc, bối cảnh thực tế xác định.",
     actorsVi: "Giáo viên Toán / Chuyên gia bộ môn."
   },
@@ -153,7 +147,7 @@ export const SEVEN_STEP_PEDAGOGY = [
 
 export const EMPIRICAL_STUDY = {
   sampleSize: 400,
-  school: "Trường THCS & THPT Trần Văn Kiết, Vĩnh Long",
+  school: "Mẫu khảo sát thực nghiệm học sinh Lớp 10",
   targetGroup: "Học sinh Lớp 10 (Nhóm thực nghiệm vs Nhóm đối chứng tương đồng năng lực đầu vào)",
   durationWeeks: 4,
   period: "07/09/2026 – 07/10/2026",

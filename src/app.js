@@ -615,14 +615,14 @@ class AppBase {
         <div class="modal-container bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 p-6 sm:p-8">
           <div class="flex items-center justify-between pb-4 border-b border-slate-100">
             <div>
-              <span class="badge badge-khkt-gold">Thông tư 84/2026/TT-BGDĐT</span>
-              <h2 class="text-xl sm:text-2xl font-black text-blue-950 mt-1">Giới thiệu Công trình Nghiên cứu KHKT</h2>
+              <span class="badge badge-khkt-gold">Khung Phương Pháp CLIL</span>
+              <h2 class="text-xl sm:text-2xl font-black text-blue-950 mt-1">Giới thiệu Phương pháp Dạy & Học CLIL</h2>
             </div>
             <button type="button" class="p-2 text-slate-400 hover:text-slate-700 rounded-full" onclick="window.app.handleCloseShowcase()">✕</button>
           </div>
           <div class="py-6 space-y-4 text-sm text-slate-700">
-            <p><strong>Đề tài:</strong> Ứng dụng Trí tuệ nhân tạo phát triển Video song ngữ học Toán thực tiễn</p>
-            <p><strong>Tác giả:</strong> Phạm Nguyễn Ti Na (10A1) • <strong>GVHD:</strong> Lê Thanh Tâm (THPT Trần Văn Kiết)</p>
+            <p><strong>Định hướng:</strong> Nền tảng học tập Toán - Tiếng Anh (CLIL) Lớp 10 tiêu chuẩn tích hợp AI</p>
+            <p><strong>Phương pháp:</strong> Chu trình mô hình hóa toán học 5 phân cảnh chuẩn hóa kết hợp kiểm chứng 2 lớp độc lập</p>
             <div class="scaffold-box">
               <h4 class="font-bold text-amber-900 mb-1">Kết quả thực nghiệm trên N=400 học sinh Lớp 10:</h4>
               <p>Điểm trung bình nhóm thực nghiệm đạt <strong>7.85 ± 1.12</strong> so với nhóm đối chứng <strong>5.42 ± 1.34</strong> (Chênh lệch +2.43 điểm, hiệu ứng Cohen's d = 1.95, p < 0.001).</p>
@@ -669,7 +669,7 @@ class AppBase {
       <div class="card p-8 text-center space-y-4">
         <span class="badge badge-khkt-gold">Milestone M4: Pedagogical Learner Survey</span>
         <h2 class="text-2xl font-bold text-blue-950">Phiếu Khảo sát Hứng thú & Tự tin (Thang đo Likert 5 mức độ)</h2>
-        <p class="text-slate-600 max-w-xl mx-auto">Tái hiện công cụ khảo sát khoa học trong tài liệu KHKT (Hình 4, N=400 học sinh) nhằm đo lường mức độ tiếp thu Toán thực tiễn qua video song ngữ.</p>
+        <p class="text-slate-600 max-w-xl mx-auto">Tái hiện công cụ khảo sát khoa học trong khảo sát thực nghiệm sư phạm (Hình 4, N=400 học sinh) nhằm đo lường mức độ tiếp thu Toán thực tiễn qua video song ngữ.</p>
         <button type="button" class="btn btn-outline" onclick="window.app.handleBackToExplore()">← Quay lại danh mục / Back to Explore</button>
       </div>
     `;
@@ -691,13 +691,13 @@ class AppBase {
           </div>
           <div>
             ${isEn 
-              ? 'Science & Technology Research Project 2026-2027 • Tran Van Kiet High School, Ben Tre'
-              : 'Dự án Cuộc thi Nghiên cứu Khoa học Kỹ thuật (KHKT) 2026-2027 • Trường THPT Trần Văn Kiết, Bến Tre'}
+              ? 'Grade 10 Math - English (CLIL) Standard Learning Platform'
+              : 'Nền tảng học tập Toán - Tiếng Anh (CLIL) Lớp 10 tiêu chuẩn'}
           </div>
           <div class="text-slate-400 mt-1">
             ${isEn 
-              ? 'Authors: Pham Nguyen Ti Na (10A1) • Advisor: Le Thanh Tam • Circular 84/2026/TT-BGDDT Compliance'
-              : 'Tác giả: Phạm Nguyễn Ti Na (10A1) • Hướng dẫn: Lê Thanh Tâm • Tuân thủ Thông tư 84/2026/TT-BGDĐT'}
+              ? 'Standardized 5-scene pedagogical methodology • Dual-layer verification'
+              : 'Quy trình tích hợp 5 phân cảnh thực tế • Kiểm chứng chất lượng 2 lớp độc lập'}
           </div>
         </div>
         <div class="flex items-center gap-2">

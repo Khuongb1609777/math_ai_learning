@@ -47,9 +47,9 @@ export class Header {
       dual: 'MATH ENGLISH AI LEARN'
     },
     brandSubtitle: {
-      vi: 'DỰ ÁN KHKT 2026-2027 • THPT TRẦN VĂN KIẾT',
-      en: 'KHKT RESEARCH 2026-2027 • TRAN VAN KIET HIGH SCHOOL',
-      dual: 'DỰ ÁN KHKT 2026-2027 • THPT TRẦN VĂN KIẾT'
+      vi: 'NỀN TẢNG HỌC TẬP TOÁN - TIẾNG ANH (CLIL) LỚP 10 TIÊU CHUẨN',
+      en: 'GRADE 10 MATH - ENGLISH (CLIL) STANDARD LEARNING PLATFORM',
+      dual: 'NỀN TẢNG HỌC TẬP TOÁN - TIẾNG ANH (CLIL) LỚP 10 TIÊU CHUẨN'
     },
     navExplore: {
       vi: 'Bài học',
@@ -72,9 +72,9 @@ export class Header {
       dual: 'Biên soạn / Studio'
     },
     navShowcase: {
-      vi: 'Giới thiệu đề án',
-      en: 'Showcase',
-      dual: 'Giới thiệu đề án'
+      vi: 'Giới thiệu phương pháp',
+      en: 'Methodology',
+      dual: 'Giới thiệu phương pháp'
     },
     navSurvey: {
       vi: 'Khảo sát người học',

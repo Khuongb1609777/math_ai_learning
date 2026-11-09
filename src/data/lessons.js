@@ -28,7 +28,7 @@ export const DEFAULT_LESSONS = [
     realWorldContextVi: "Ngọn hải đăng ven biển đứng trên vách đá dốc đứng, chân tháp C bị sóng biển bao quanh nguy hiểm, không thể đo khoảng cách trực tiếp bằng thước dây.",
     realWorldContextEn: "A coastal lighthouse stands on rugged steep cliffs where base C is surrounded by turbulent waves, making direct tape measurement impossible.",
     status: "PUBLISHED",
-    author: "Phạm Nguyễn Ti Na (10A1, THPT Trần Văn Kiết)",
+    author: "Ban Chuyên môn Toán - Tiếng Anh (CLIL)",
     publishedAt: "2026-11-06T10:00:00Z",
 
     // --- 5 SCENES ---
@@ -335,7 +335,7 @@ export const DEFAULT_LESSONS = [
     realWorldContextVi: "Ban tổ chức lễ hội cần vận chuyển xe tải chở thiết bị âm thanh và màn hình LED dạng hình hộp chữ nhật đi qua cổng chào hình vòm Parabol có bề rộng chân cổng 8m và chiều cao đỉnh 6m.",
     realWorldContextEn: "A festival committee needs to transport a box truck carrying audio gear and LED stage screens through a parabolic entrance arch measuring 8m across the base and 6m tall at its apex.",
     status: "PUBLISHED",
-    author: "Phạm Nguyễn Ti Na (10A1, THPT Trần Văn Kiết)",
+    author: "Ban Chuyên môn Toán - Tiếng Anh (CLIL)",
     publishedAt: "2026-11-06T10:00:00Z",
 
     // --- 5 SCENES ---
@@ -639,10 +639,10 @@ export const DEFAULT_LESSONS = [
     difficulty: "Hard",
     estimatedMinutes: 20,
     thumbnail: "/assets/khkt/image3.png",
-    realWorldContextVi: "Hợp tác xã Vận tải Du lịch Chợ Lách (Vĩnh Long) khai thác tuyến xe buýt sinh thái miệt vườn Cái Mơn. Giá vé hiện tại 200.000 VNĐ với 60 khách/chuyến. Khảo sát cho thấy cứ giảm giá 10.000 VNĐ thì đón thêm 5 khách, sức chứa tối đa xe là 100 khách.",
+    realWorldContextVi: "Hợp tác xã Vận tải Du lịch Chợ Lách khai thác tuyến xe buýt sinh thái miệt vườn Cái Mơn. Giá vé hiện tại 200.000 VNĐ với 60 khách/chuyến. Khảo sát cho thấy cứ giảm giá 10.000 VNĐ thì đón thêm 5 khách, sức chứa tối đa xe là 100 khách.",
     realWorldContextEn: "The Cho Lach Tourism Cooperative operates an eco-bus shuttling tourists to Cai Mon fruit orchards. Current fare is 200,000 VND with 60 riders/trip. Market research indicates each 10,000 VND discount attracts 5 more riders, with a maximum capacity of 100 passengers.",
     status: "PUBLISHED",
-    author: "Phạm Nguyễn Ti Na (10A1, THPT Trần Văn Kiết)",
+    author: "Ban Chuyên môn Toán - Tiếng Anh (CLIL)",
     publishedAt: "2026-11-06T10:00:00Z",
 
     // --- 5 SCENES ---
@@ -652,8 +652,8 @@ export const DEFAULT_LESSONS = [
         key: "context",
         titleVi: "Mở đầu bối cảnh: Tuyến xe du lịch sinh thái Chợ Lách",
         titleEn: "Context Introduction: Cho Lach Eco-Tourism Bus",
-        contentVi: "Hợp tác xã Vận tải Du lịch Chợ Lách (Vĩnh Long) khai thác tuyến xe buýt du lịch sinh thái miệt vườn Cái Mơn. Làm thế nào để định giá vé sao cho vừa thu hút thêm hành khách, vừa đạt tổng doanh thu cao nhất cho mỗi chuyến xe?",
-        contentEn: "The Cho Lach Tourism Transport Cooperative in Vinh Long operates an eco-bus line welcoming visitors to Cai Mon fruit orchards. How should they price tickets to attract more passengers while maximizing total gross revenue per trip?",
+        contentVi: "Hợp tác xã Vận tải Du lịch Chợ Lách khai thác tuyến xe buýt du lịch sinh thái miệt vườn Cái Mơn. Làm thế nào để định giá vé sao cho vừa thu hút thêm hành khách, vừa đạt tổng doanh thu cao nhất cho mỗi chuyến xe?",
+        contentEn: "The Cho Lach Tourism Transport Cooperative operates an eco-bus line welcoming visitors to Cai Mon fruit orchards. How should they price tickets to attract more passengers while maximizing total gross revenue per trip?",
         visualDescriptionVi: "Toàn cảnh bến xe du lịch sinh thái Chợ Lách nhộn nhịp du khách bên dòng sông Tiền hiền hòa, rợp bóng dừa và vườn cây ăn trái Cái Mơn, đoàn xe buýt xanh thân thiện môi trường đón khách.",
         visualDescriptionEn: "Scenic eco-tourism bus depot in Cho Lach along the Mekong riverbanks, bordered by lush fruit orchards, with modern green shuttle buses boarding visitors.",
         formulas: ["\\text{Objective: Maximize total trip revenue } R"],

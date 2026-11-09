@@ -20,6 +20,7 @@
 import { DEFAULT_LESSONS } from '../data/lessons.js';
 import { getLessonById, getLessons } from '../services/storage.js';
 import * as speech from '../services/speech.js';
+import { renderMath } from '../services/mathRenderer.js';
 
 export class LessonPlayer {
   /**
@@ -586,7 +587,7 @@ export class LessonPlayer {
               <div class="flex flex-wrap gap-2.5 items-center justify-center">
                 ${scene.formulas.map(f => `
                   <div class="math-formula px-4 py-2 font-mono text-sm sm:text-base font-bold bg-white shadow-sm">
-                    ${f}
+                    ${renderMath(f)}
                   </div>
                 `).join('')}
               </div>

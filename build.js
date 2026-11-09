@@ -74,7 +74,27 @@ if (missingCount > 0) {
   process.exit(1);
 }
 
-// 5. Calculate statistics
+// 5. Verification of ES module imports in dist/src
+async function validateModuleImports(dir) {
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      await validateModuleImports(fullPath);
+    } else if (entry.name.endsWith('.js')) {
+      try {
+        await import(fullPath);
+      } catch (err) {
+        console.error(`❌ [BUILD] ES Module Import/Export Error in ${path.relative(__dirname, fullPath)}: ${err.message}`);
+        process.exit(1);
+      }
+    }
+  }
+}
+await validateModuleImports(DIST_SRC);
+console.log('🔍 [BUILD] All ES module exports & imports verified successfully.');
+
+// 6. Calculate statistics
 function countFilesAndSize(dir) {
   let count = 0;
   let totalBytes = 0;

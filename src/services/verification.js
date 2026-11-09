@@ -602,3 +602,8 @@ export function generateCertificate(lesson, criteriaOrSignatures = {}) {
     }
   };
 }
+
+// Compatibility aliases for component imports
+export const verifyLessonDualLayer = getPublishGateReport;
+export const generateQualityCertificate = generateCertificate;
+

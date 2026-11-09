@@ -393,5 +393,6 @@ export const aiDisclosure = AI_DISCLOSURE_DECLARATION.map(item => ({
  * Standardized survey statements alias for F9.1
  */
 export const surveyStatements = LIKERT_SURVEY_STATEMENTS;
+export const EMPIRICAL_STUDY_DATA = EMPIRICAL_STUDY;
 
 export default KHKT_METADATA;

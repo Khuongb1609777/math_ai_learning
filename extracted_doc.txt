@@ -1,0 +1,366 @@
+
+
+
+SỞ GIÁO DỤC VÀ ĐÀO TẠO VĨNH LONGTRƯỜNG THCS VÀ THPT TRẦN VĂN KIẾT
+━━━ ★ ━━━
+
+
+CUỘC THI NGHIÊN CỨU KHOA HỌC KỸ THUẬT NĂM HỌC 2026 – 2027
+
+TÊN DỰ ÁN:
+ỨNG DỤNG TRÍ TUỆ NHÂN TẠO PHÁT TRIỂN VIDEO SONG NGỮ HỌC TOÁN THỰC TIỄN(APPLICATION OF ARTIFICIAL INTELLIGENCE IN DEVELOPING BILINGUAL VIDEOS FOR REAL-WORLD MATHEMATICS EDUCATION)
+
+
+Lĩnh vực dự thi: Công nghệ thông tin (Phần mềm hệ thống & Học liệu số)
+Học sinh thực hiện: Phạm Nguyễn Ti Na
+Lớp: 10A1 - Trường THPT Trần Văn Kiết
+Người hướng dẫn nghiên cứu: Lê Thanh Tâm
+Thời gian thực hiện: 07/09/2026 - 20/01/2027
+Địa điểm thực hiện: Trường THCS&THPT Trần Văn Kiết, Tỉnh Vĩnh Long
+Năm học: 2026 – 2027
+
+Chợ Lách, ngày 6 tháng 11 năm 2026
+
+SỞ GIÁO DỤC VÀ ĐÀO TẠO VĨNH LONGTRƯỜNG THCS VÀ THPT TRẦN VĂN KIẾT
+━━━ ★ ━━━
+
+
+CUỘC THI NGHIÊN CỨU KHOA HỌC KỸ THUẬT NĂM HỌC 2026 – 2027
+
+TÊN DỰ ÁN:
+ỨNG DỤNG TRÍ TUỆ NHÂN TẠO PHÁT TRIỂN VIDEO SONG NGỮ HỌC TOÁN THỰC TIỄN(APPLICATION OF ARTIFICIAL INTELLIGENCE IN DEVELOPING BILINGUAL VIDEOS FOR REAL-WORLD MATHEMATICS EDUCATION)
+
+
+Lĩnh vực dự thi: Công nghệ thông tin (Phần mềm hệ thống & Học liệu số)
+Học sinh thực hiện: Phạm Nguyễn Ti Na
+Lớp: 10A1 - Trường THPT Trần Văn Kiết
+Người hướng dẫn nghiên cứu: Lê Thanh Tâm
+Thời gian thực hiện: 07/09/2026 - 20/01/2027
+Địa điểm thực hiện: Trường THCS&THPT Trần Văn Kiết, Tỉnh Vĩnh Long
+Năm học: 2026 – 2027
+
+Chợ Lách, ngày 6 tháng 11 năm 2026
+
+MỤC LỤC BÁO CÁO
+TRANG BÌA DỰ ÁN1
+MỤC LỤC BÁO CÁO2
+TÓM TẮT DỰ ÁN (BÁO CÁO TÓM TẮT IIIb)3
+PHẦN 1. CÂU HỎI NGHIÊN CỨU VÀ MỤC TIÊU NGHIÊN CỨU4
+1.1. Lý do chọn đề tài và Tính cấp thiết4
+1.2. Câu hỏi nghiên cứu (Research Questions)4
+1.3. Mục tiêu nghiên cứu (Research Objectives)5
+1.4. Giả thuyết khoa học (Scientific Hypothesis)5
+1.5. Đối tượng, Phạm vi và Thời gian nghiên cứu5
+1.6. Tính mới và Ý nghĩa khoa học - thực tiễn5
+PHẦN 2. THIẾT KẾ VÀ PHƯƠNG PHÁP NGHIÊN CỨU6
+2.1. Cơ sở lý luận (Mô hình Blum & Leiß, Đa biểu diễn, CLIL)6
+2.2. Thiết kế nghiên cứu và Bảng chỉ báo đo lường6
+2.3. Đạo đức nghiên cứu và Bảo vệ dữ liệu7
+PHẦN 3. QUY TRÌNH XÂY DỰNG VIDEO SONG NGỮ BẰNG AI VÀ THỰC HIỆN7
+3.1. Quy trình 7 bước chuẩn hóa7
+3.2. Kịch bản minh họa mẫu Bài toán ứng dụng Hệ thức lượng giác trong thực tế8
+3.3. Bảng kiểm tiêu chí đánh giá chất lượng Video AI Song ngữ9
+PHẦN 4. KẾT QUẢ THỰC NGHIỆM VÀ PHÂN TÍCH DỮ LIỆU10
+4.1. Mô tả quá trình thực nghiệm sư phạm (N = 400 học sinh)10
+4.2. Số liệu thực nghiệm định lượng11
+4.3. Phân tích và Thảo luận kết quả11
+PHẦN 5. KẾT QUẢ SẢN PHẨM, ƯU ĐIỂM, HẠN CHẾ VÀ ỨNG DỤNG12
+5.1. Danh mục Sản phẩm đạt được của dự án12
+5.2. Ưu điểm, Hạn chế và Tính mới13
+5.3. Khả năng ứng dụng thực tế và Hướng phát triển13
+PHẦN 6. KẾT LUẬN VÀ KIẾN NGHỊ13
+6.1. Kết luận13
+6.2. Kiến nghị13
+PHẦN 7. KHAI BÁO SỬ DỤNG CÔNG NGHỆ SỐ VÀ TRÍ TUỆ NHÂN TẠO14
+TÀI LIỆU THAM KHẢO (REFERENCES)14
+MẪU PHIẾU PHẢN HỒI HỌC SINH (SONG NGỮ)15
+TÓM TẮT DỰ ÁN 
+Tóm tắt dự án (Tiếng Việt): Dự án nghiên cứu giải pháp ứng dụng Trí tuệ nhân tạo (AI) xây dựng quy trình phát triển video học tập song ngữ (Việt - Anh) trực quan hóa bài toán thực tế cho học sinh lớp 10, nhằm khắc phục khó khăn trong việc chuyển đổi văn bản sang mô hình toán học và nâng cao khả năng tiếp thu thuật ngữ tiếng Anh chuyên ngành (CLIL). Quy trình 7 bước chuẩn hóa bao gồm phân tích toán học, soạn kịch bản song ngữ, khởi tạo video bằng AI và kiểm chứng 2 lớp về tính chính xác toán học lẫn ngôn ngữ. Thực nghiệm sư phạm tiến hành trên 400 học sinh lớp 10 cho thấy hiệu quả vượt trội: điểm trung bình bài kiểm tra đọc hiểu và mô hình hóa tăng từ 5,42/10 lên 7,85/10 (+2,43 điểm); tỉ lệ xác định đúng dữ kiện tăng 28,7%; tỉ lệ lập mô hình toán học phù hợp tăng 34,5%; và tỉ lệ nhận biết, ứng dụng đúng từ vựng tiếng Anh toán học tăng 40,6%. Kết quả khẳng định video AI song ngữ kết hợp câu hỏi định hướng giúp giảm gánh nặng nhận thức, kích thích tư duy mô hình hóa và hỗ trợ tích hợp ngoại ngữ hiệu quả. Dự án có khả năng đóng gói thành học liệu số ứng dụng rộng rãi trong các trường THPT.
+Abstract (English): This project investigates an Artificial Intelligence (AI) application to establish a 7-step standardized workflow for developing bilingual (Vietnamese - English) educational videos. Designed for 10th-grade students, these visual tools bridge contextual text and mathematical modeling while enhancing Math English vocabulary acquisition through Content and Language Integrated Learning (CLIL). The workflow incorporates dual-layer verification for mathematical and linguistic precision. Pedagogical experimentation across 400 students demonstrated significant improvements: average post-test scores increased from 5.42/10 to 7.85/10 (+2.43 points); accurate data extraction improved by 28.7%; appropriate mathematical model formulation rose by 34.5%; and correct Math English terminology usage expanded by 40.6%. The findings confirm that bilingual AI videos combined with guided prompts effectively reduce cognitive load, foster modeling skills, and advance cross-disciplinary STEM-CLIL education.
+PHẦN 1. CÂU HỎI NGHIÊN CỨU VÀ MỤC TIÊU NGHIÊN CỨU
+1.1. Lý do chọn đề tài và Tính cấp thiết
+Trong Chương trình Giáo dục phổ thông môn Toán, năng lực mô hình hóa toán học và giải quyết bài toán thực tế đóng vai trò cốt lõi nhằm phát triển tư duy thực tiễn cho học sinh THPT. Tuy nhiên, qua khảo sát thực tế tại cấp THPT, đa số học sinh lớp 10 gặp rào cản lớn khi đọc hiểu các bài toán thực tế dạng văn bản dài, chứa nhiều dữ kiện ngữ cảnh phức tạp hoặc bối cảnh ít quen thuộc. Học sinh khó hình dung mối liên hệ giữa các đại lượng thực tế để chuyển đổi sang ngôn ngữ và mô hình toán học.
+Bên cạnh đó, xu hướng hội nhập quốc tế đòi hỏi học sinh không chỉ giỏi tư duy toán học mà còn phải làm quen với tiếng Anh chuyên ngành Toán (Math English). Việc học tập tích hợp nội dung và ngôn ngữ (Content and Language Integrated Learning - CLIL) đang là định hướng giáo dục tiên tiến nhưng còn thiếu học liệu trực quan phù hợp.
+Sự bùng nổ của Trí tuệ nhân tạo (AI) tạo sinh cung cấp công cụ mạnh mẽ để chuyển đổi văn bản kịch bản thành hình ảnh, âm thanh và video sinh động. Dù vậy, việc sử dụng AI trực tiếp thường gặp rủi ro 'ảo giác' (hallucination): sai lệch số liệu, nhầm lẫn quan hệ hình học hoặc tạo chi tiết gây nhiễu. Do đó, dự án được nghiên cứu nhằm xây dựng một quy trình chuẩn hóa có bước kiểm chứng toán học - ngôn ngữ nghiêm ngặt, tạo ra bộ video AI song ngữ giúp học sinh nâng cao năng lực đọc hiểu, mô hình hóa toán học và vốn từ tiếng Anh chuyên ngành.
+1.2. Câu hỏi nghiên cứu (Research Questions)
+Để giải quyết vấn đề thực tiễn trên, dự án xác định 03 câu hỏi nghiên cứu cốt lõi:
+• Câu hỏi 1: Làm thế nào để xây dựng một quy trình chuẩn hóa ứng dụng AI chuyển đổi bài toán thực tế dạng văn bản thành video minh họa song ngữ (Việt - Anh) mà vẫn bảo đảm tính chính xác tuyệt đối về dữ kiện toán học và chuẩn mực ngôn ngữ?
+• Câu hỏi 2: Video AI song ngữ được xây dựng theo quy trình chuẩn hóa có hỗ trợ học sinh lớp 10 đọc hiểu đề bài, tích hợp từ vựng tiếng Anh toán học và xây dựng mô hình toán học hiệu quả hơn so với phương pháp tiếp cận văn bản truyền thống hay không?
+• Câu hỏi 3: Những yếu tố nào trong video AI song ngữ mang lại hiệu quả cao nhất cho người học và những hạn chế kỹ thuật/sư phạm nào cần tiếp tục khắc phục?
+1.3. Mục tiêu nghiên cứu (Research Objectives)
+1. Xây dựng thành công quy trình 7 bước chuẩn hóa ứng dụng AI phát triển video học Toán thực tiễn tích hợp tiếng Anh (CLIL).
+2. Phát triển bộ sưu tập video AI song ngữ gắn với các bài toán thực tế trọng tâm trong Chương trình Toán 10 (Hàm số bậc hai, Lượng giác, Hình học không gian, Tối ưu hóa).
+3. Xây dựng Bảng kiểm tiêu chí (Checklist) đánh giá toàn diện chất lượng video về 2 phương diện: tính chính xác toán học và tính chuẩn xác ngôn ngữ tiếng Anh.
+4. Tổ chức thực nghiệm sư phạm trên mẫu N = 400 học sinh lớp 10, thu thập và xử lý số liệu định lượng lẫn định chất để kiểm chứng giả thuyết nghiên cứu.
+1.4. Giả thuyết khoa học (Scientific Hypothesis)
+'Nếu bài toán thực tế được biểu diễn dưới dạng video AI song ngữ có kịch bản logic, dữ kiện nhất quán, hình ảnh trực quan kết hợp thuật ngữ tiếng Anh toán học và hệ thống câu hỏi gợi mở định hướng tư duy, thì học sinh lớp 10 sẽ giảm thiểu được gánh nặng nhận thức, hình dung bối cảnh bài toán chính xác hơn, từ đó đạt kết quả cao hơn rõ rệt trong việc xác định dữ kiện, lập mô hình toán học và tiếp thu từ vựng tiếng Anh chuyên ngành so với việc chỉ tiếp cận bài toán qua văn bản thuần túy.'
+1.5. Đối tượng, Phạm vi và Thời gian nghiên cứu
+• Đối tượng nghiên cứu: Quy trình công nghệ tạo video AI song ngữ; bộ video bài toán thực tế Toán 10; năng lực đọc hiểu, mô hình hóa toán học và khả năng thụ hưởng tiếng Anh chuyên ngành của học sinh.
+• Mẫu thực nghiệm: 400 học sinh lớp 10 tại trường THPT Trần Văn Kiết (được chia thành nhóm thực nghiệm và nhóm đối chứng tương đồng về năng lực đầu vào).
+• Phạm vi nội dung: Chủ đề Giải bài toán thực tế trong Chương trình Toán 10 (Đại số & Hình học).
+• Thời gian thực hiện: Từ 07/09/2026 đến 20/01/2027 (Giai đoạn thực nghiệm từ 07/09/2026 đến 07/10/2026).
+1.6. Tính mới và Ý nghĩa khoa học - thực tiễn
+Tính mới của dự án không dừng lại ở việc dùng công cụ AI tạo video đơn thuần, mà nằm ở: (1) Quy trình kiểm chứng 2 lớp (Toán học & Ngôn ngữ) loại bỏ sai sót của AI; (2) Sự kết hợp tiên phong giữa trực quan hóa video AI với mô hình dạy học tích hợp ngoại ngữ CLIL; (3) Hệ thống câu hỏi định hướng tư duy đi kèm video giúp học sinh tự xây dựng mô hình toán học thay vì thụ động xem giải pháp.
+PHẦN 2. THIẾT KẾ VÀ PHƯƠNG PHÁP NGHIÊN CỨU
+2.1. Cơ sở lý luận
+Nghiên cứu dựa trên 03 trụ cột lý luận chính:
+1. Chu trình mô hình hóa toán học của Blum & Leiß: Hiểu tình huống -> Đơn giản hóa/Bối cảnh hóa -> Chuyển sang mô hình toán -> Lập luận tính toán -> Diễn giải kết quả thực tế.
+2. Lý thuyết Đa biểu diễn (Multiple Representations) của Goldin: Việc chuyển đổi giữa biểu diễn ngôn ngữ, trực quan sinh động và ký hiệu toán học giúp sâu sắc hóa bản chất tri thức.
+3. Khung lý thuyết CLIL (Content and Language Integrated Learning): Phát triển song song năng lực môn học và năng lực ngoại ngữ qua ngữ cảnh thực tế.
+2.2. Thiết kế nghiên cứu
+Nghiên cứu kết hợp phương pháp Nghiên cứu Phát triển Giáo dục (EDR) để xây dựng quy trình/sản phẩm và Phương pháp Thực nghiệm Sư phạm so sánh Trước - Sau tác động (Pre-test / Post-test Control Group Design) trên N = 400 học sinh lớp 10.
+• Bảng 1. Khung chỉ báo đo lường và phương pháp thu thập dữ liệu
+Nội dung đo lường
+Chỉ báo cụ thể
+Công cụ thu thập
+Đọc hiểu tình huống
+Xác định chính xác dữ kiện, đại lượng và điều kiện bài toán thực tế
+Bài kiểm tra Pre/Post-test & Phiếu nhiệm vụ
+Mô hình hóa toán học
+Lựa chọn ẩn số, thiết lập phương trình/bất phương trình/hàm số phù hợp
+Rubric chấm điểm bài làm toán học (10 điểm)
+Tích hợp Tiếng Anh (CLIL)
+Nhận biết, hiểu nghĩa và ứng dụng đúng thuật ngữ Math English trong đề
+Bài kiểm tra từ vựng & Phiếu trắc nghiệm song ngữ
+Trải nghiệm người học
+Đánh giá mức độ dễ hiểu, hấp dẫn, chi tiết hỗ trợ và chi tiết gây nhiễu
+Phiếu khảo sát phản hồi học sinh (Thang Likert 5 mức)
+Chất lượng Video AI
+Đảm bảo tính chính xác toán học, chuẩn ngôn ngữ, âm thanh/hình ảnh nhất quán
+Bảng kiểm tiêu chí chuyên môn (Checklist)
+(Nguồn: Khung đo lường do nhóm nghiên cứu tự thiết kế và chuẩn hóa)
+2.3. Đạo đức nghiên cứu và Bảo vệ dữ liệu
+Nghiên cứu tuân thủ nghiêm ngặt chuẩn mực đạo đức: Tất cả 400 học sinh tham gia được thông báo minh bạch về mục đích nghiên cứu và có sự đồng ý của nhà trường/phụ huynh. Toàn bộ dữ liệu bài làm và khảo sát được mã hóa ẩn danh (Participant ID), không tiết lộ danh tính cá nhân. Dữ liệu gốc được lưu trữ bảo mật chỉ phục vụ mục đích phân tích khoa học của dự án.
+PHẦN 3. QUY TRÌNH XÂY DỰNG VIDEO SONG NGỮ BẰNG AI VÀ QUÁ TRÌNH THỰC HIỆN
+3.1. Quy trình 7 bước chuẩn hóa
+Bước 1. Lựa chọn bài toán thực tế: Chọn lọc các bài toán thực tế điển hình thuộc chương trình Toán 10 (vd: Chuyển động parabol, bài toán tối ưu doanh thu, đo chiều cao/khoảng cách lượng giác) có cấu trúc ngữ cảnh phong phú.
+Bước 2. Phân tích toán học & Tiếng Anh chuyên ngành: Xác định rõ ẩn số, dữ kiện, điều kiện biên, lời giải chuẩn và trích xuất các thuật ngữ tiếng Anh toán học tương ứng (Math Vocabulary List).
+Bước 3. Viết kịch bản phân cảnh song ngữ (Bilingual Storyboard): Chia bài toán thành 5 phân cảnh ngắn (Mở đầu bối cảnh -> Cung cấp dữ kiện -> Nêu vấn đề & Tiếng Anh -> Gợi mở tư duy mô hình hóa -> Kết thúc).
+Bước 4. Khởi tạo nội dung bằng công cụ AI: Ứng dụng AI tạo hình ảnh/minh họa (Midjourney/DALL-E 3), tạo giọng đọc song ngữ chuẩn (ElevenLabs) và hợp nhất video (HeyGen/CapCut AI). Lưu trữ đầy đủ lịch sử Prompt.
+Bước 5. Kiểm chứng 2 lớp (Dual-verification): Đội ngũ kiểm chứng đối chiếu video với đề gốc về tính chính xác toán học (số liệu, quan hệ hình học) và tính chuẩn xác tiếng Anh.
+Bước 6. Thử nghiệm diện hẹp (Pilot test): Chiếu thử cho nhóm 20 học sinh để đánh giá độ nét âm thanh, tốc độ thoại, mức độ hiểu từ vựng và tinh chỉnh kỹ thuật.
+Bước 7. Đóng gói học liệu số: Hoàn thiện video kèm kịch bản song ngữ, phiếu học tập CLIL, lời giải chi tiết và lưu trữ hệ thống.
+
+Hình 1. Sơ đồ Quy trình 7 bước chuẩn hóa phát triển Video AI học Toán song ngữ
+3.2. Kịch bản minh họa mẫu Video AI Song ngữ
+Dưới đây là kịch bản phân cảnh chi tiết minh họa cho bài toán thực tế áp dụng Hệ thức lượng giác trong tam giác (Đo chiều cao ngọn hải đăng khi chân tháp không thể tiếp cận trực tiếp, tích hợp Tiếng Anh Toán - CLIL):
+Hình 2. Mô phỏng giao diện Video AI bài giảng Toán 10 song ngữ
+ (Bài toán ứng dụng Hệ thức lượng giác trong thực tế)
+• Bảng 2. Kịch bản phân cảnh song ngữ mẫu – Bài toán Hệ thức lượng giác trong thực tế 
+Phân cảnh
+Nội dung & Hình ảnh AI
+Lời thoại song ngữ 
+(VN - EN)
+Điểm kiểm tra
+Cảnh 1:
+Mở đầu
+Hình ảnh 3D ngọn hải đăng ven biển trên vách đá đứng. Chân tháp C nguy hiểm không thể lại gần.
+Chào các bạn! Làm thế nào để đo chiều cao ngọn hải đăng khi ta không thể đến chân tháp?(Hello! How can we measure the height of a lighthouse when its base is inaccessible?)
+Bối cảnh thực tế sinh động, kích thích tò mò.
+Cảnh 2: 
+Dữ kiện
+Mô hình 2D góc nhìn ngang thể hiện 2 điểm A, B cách nhau 30m. Góc nâng tại A là 42°, tại B là 63°.
+Từ hai điểm A và B cách nhau 30m, ta đo được góc nâng đến đỉnh hải đăng lần lượt là 42° và 63°.(From points A and B 30m apart, the angles of elevation to the top are 42° and 63°.)
+Số liệu AB = 30m, CAD = 42°, CBD = 63° rõ ràng.
+
+Cảnh 3: 
+Vấn đề & Tiếng Anh
+Hiển thị sơ đồ tam giác ABD và tam giác vuông BCD cùng bảng từ vựng Tiếng Anh Toán.
+Hãy áp dụng Định lý Sin trong tam giác ABD để tính độ dài BD, từ đó tìm chiều cao CD!(Apply the Law of Sines in triangle ABD to find length BD, then determine height CD!)
+Từ vựng: Angle of elevation, Law of Sines, Height, Inaccessible base.
+Cảnh 4: 
+Gợi mở
+Sơ đồ định hướng: ADB = 63° - 42° = 21°.
+Công thức  BDsin42°  =ABsin21° 
+Gợi ý: ADB = 63° - 42° = 21°. 
+Sử dụng Định lý Sin: BDsinA = ABsinD để tính BD.(Hint: Angle ADB = 63° - 42° = 21°. Apply Law of Sines: BDsinA  = ABsinD to get BD.)
+Định hướng mô hình hóa, không đưa ngay đáp số.
+Cảnh 5: 
+Kết thúc
+Màn hình dừng tại tam giác BCD vuông tại C với công thức CD = BD · sin 63° và dòng chữ mời thực hành.
+Bây giờ, hãy mở phiếu học tập và tính chiều cao CD của ngọn hải đăng nhé!(Now, open your worksheet and calculate the height CD of the lighthouse!)
+Nhắc nhở học sinh tự làm bài và kiểm tra
+(Nguồn: Kịch bản do nhóm nghiên cứu biên soạn và thẩm định)
+3.3. Bảng kiểm tiêu chí đánh giá chất lượng Video AI Song ngữ
+Mọi video trước khi đưa vào thực nghiệm phải vượt qua Bảng kiểm tiêu chí 2 lớp:
+• Bảng 3. Bảng kiểm tiêu chí đánh giá chất lượng Video AI Song ngữ
+Tiêu chí đánh giá
+Kết quả kiểm định
+Ghi chú & Minh chứng chi tiết
+1. Tính chính xác toán học tuyệt đối
+ĐẠT (100%)
+Khớp 100% số liệu, ký hiệu, đơn vị đo và quan hệ hình học với đề gốc.
+2. Chuẩn xác ngôn ngữ Tiếng Anh (Math EN)
+ĐẠT (100%)
+Thuật ngữ toán tiếng Anh chính xác, phát âm AI chuẩn bản ngữ, phát âm rõ ràng.
+3. Trực quan hình ảnh & Không gây nhiễu
+ĐẠT (100%)
+Hình ảnh AI minh họa bối cảnh thực tế rõ nét, loại bỏ mọi chi tiết sai lệch.
+4. Chất lượng âm thanh, hình ảnh & Phụ đề
+ĐẠT (100%)
+Độ phân giải HD 1080p, tốc độ nói vừa phải, phụ đề song ngữ hiển thị rõ.
+5. Đầy đủ hồ sơ kịch bản & Lời giải chuẩn
+ĐẠT (100%)
+Kèm file Word đề gốc, kịch bản phân cảnh, đáp án chi tiết và phiếu học tập.
+6. Khai báo trung thực nhật ký Prompt AI
+ĐẠT (100%)
+Lưu vết 100% lịch sử Prompt, công cụ AI sử dụng và nhật ký chỉnh sửa của học sinh.
+(Nguồn: Bảng kiểm do học sinh và giáo viên hướng dẫn xây dựng)
+PHẦN 4. KẾT QUẢ THỰC NGHIỆM VÀ PHÂN TÍCH DỮ LIỆU
+4.1. Mô tả quá trình thực nghiệm sư phạm
+Quá trình thực nghiệm được tiến hành trong 04 tuần trên mẫu N = 400 học sinh lớp 10 tại Trường THCS & THPT Trần Văn Kiết. Học sinh thực hiện bài kiểm tra đầu vào (Pre-test) để đánh giá năng lực đọc hiểu toán thực tế và từ vựng tiếng Anh ban đầu. Tiếp đó, nhóm thực nghiệm được học tập kết hợp video AI song ngữ và phiếu nhiệm vụ CLIL, trong khi nhóm đối chứng tiếp cận qua văn bản truyền thống. Sau 4 tuần, cả hai nhóm làm bài kiểm tra sau tác động (Post-test) và điền phiếu phản hồi.
+4.2. Số liệu thực nghiệm định lượng
+Kết quả xử lý thống kê được tổng hợp chi tiết trong Bảng 4:
+• Bảng 4. Tổng hợp kết quả thực nghiệm sư phạm trước và sau tác động (N = 400)
+Chỉ số đánh giá
+Trước tác động
+Sau tác động
+Mức tăng
+Ý nghĩa thống kê
+Điểm trung bình bài kiểm tra (Thang 10)
+5.42
+7.85
++2.43
+p < 0.001 (Rất có ý nghĩa)
+Tỉ lệ xác định đúng dữ kiện & bối cảnh
+58.5%
+87.2%
++28.7%
+Tăng trưởng vượt bậc
+Tỉ lệ thiết lập mô hình toán học đúng
+42.0%
+76.5%
++34.5%
+Cải thiện năng lực cốt lõi
+Tỉ lệ ứng dụng đúng từ vựng Tiếng Anh Toán
+31.2%
+71.8%
++40.6%
+Tác động rõ rệt nhất
+Tỉ lệ diễn giải đúng kết quả thực tế
+36.5%
+69.0%
++32.5%
+Tăng năng lực thực hành
+Mức độ đánh giá video hữu ích (Hài lòng)
+Không áp dụng
+89.5%
+89.5%
+Khảo sát ý kiến học sinh
+(Số liệu được tổng hợp từ bài kiểm tra thực nghiệm và phân tích bằng phần mềm SPSS/Excel)
+
+Hình 3. Biểu đồ so sánh kết quả thực nghiệm sư phạm trước và sau tác động (N = 400)
+4.3. Phân tích và Thảo luận kết quả
+Kết quả định lượng khẳng định mạnh mẽ tính đúng đắn của giả thuyết khoa học. Điểm trung bình tăng +2.43 điểm cùng với tỉ lệ thiết lập mô hình toán tăng +34.5% chứng minh rằng video AI trực quan hóa đã giúp học sinh vượt qua rào cản 'dịch thuật' từ ngôn ngữ tự nhiên sang ký hiệu toán học.
+Đặc biệt, tỉ lệ nắm vững từ vựng tiếng Anh toán học tăng đột biến +40.6% (từ 31.2% lên 71.8%) cho thấy việc lồng ghép phụ đề và âm thanh chuẩn bản ngữ trong video AI tạo ra môi trường học tập CLIL tự nhiên, không gây quá tải nhận thức mà giúp học sinh ghi nhớ thuật ngữ gắn liền với bối cảnh hình ảnh trực quan.
+
+ Hình 4. Biểu đồ khảo sát mức độ hứng thú và tự tin của học sinh đối với Video AI Song ngữ (N = 400)
+PHẦN 5. KẾT QUẢ SẢN PHẨM, ƯU ĐIỂM, HẠN CHẾ VÀ ỨNG DỤNG
+5.1. Danh mục Sản phẩm đạt được của dự án
+• Bảng 5. Danh mục các sản phẩm hoàn thành của dự án
+Tên sản phẩm
+Số lượng / Quy mô
+Mô tả chi tiết & Minh chứng
+Bộ Video AI Song ngữ
+15 video HD (Tổng 45 phút)
+Bao phủ các bài toán thực tế Toán 10 (Đại số, Hình học, Lượng giác).
+Bộ Kịch bản & Đề gốc
+15 bộ kịch bản song ngữ
+Kèm đáp án chi tiết, bảng từ vựng Math English và câu hỏi gợi mở.
+Quy trình 7 bước chuẩn hóa
+01 Quy trình công nghệ
+Sơ đồ đóng gói chuẩn hóa ứng dụng AI phát triển học liệu số.
+Bộ tiêu chí kiểm chứng (Checklist)
+01 Bảng kiểm 2 lớp
+Tiêu chuẩn đánh giá tính chính xác toán học và ngôn ngữ.
+Bộ Phiếu học tập CLIL & Rubric
+04 Mẫu phiếu & Rubric
+Công cụ đo lường và hướng dẫn tự học cho học sinh.
+(Sản phẩm được lưu trữ trong kho học liệu số của dự án)
+5.2. Ưu điểm, Hạn chế và Tính mới
+• Ưu điểm nổi bật: Trực quan hóa sinh động, kết hợp học Toán và Tiếng Anh hiệu quả; quy trình kiểm chứng nghiêm ngặt đảm bảo 100% chính xác kiến thức.
+• Hạn chế cần cải tiến: Một số hình ảnh AI tạo ra còn phụ thuộc vào khả năng sinh Prompt; thời lượng tạo video đòi hỏi máy tính cấu hình phù hợp.
+5.3. Khả năng ứng dụng thực tế và Hướng phát triển
+Bộ học liệu video AI song ngữ có thể ứng dụng trực tiếp trong các giờ học Toán 10, sinh hoạt chuyên đề STEM/CLIL hoặc làm học liệu tự học trực tuyến. Hướng phát triển tiếp theo của dự án là mở rộng quy trình cho Chương trình Toán 11, 12 và tích hợp trợ lý AI tương tác trực tiếp giải đáp thắc mắc bằng tiếng Anh cho học sinh.
+PHẦN 6. KẾT LUẬN VÀ KIẾN NGHỊ
+6.1. Kết luận
+Dự án đã giải quyết trọn vẹn 03 câu hỏi nghiên cứu đề ra: Xây dựng thành công quy trình 7 bước chuẩn hóa tạo video AI song ngữ; chứng minh được hiệu quả vượt trội trong việc hỗ trợ học sinh đọc hiểu, lập mô hình toán học (+34.5%) và tiếp thu từ vựng tiếng Anh chuyên ngành (+40.6%); đồng thời xác định rõ các yếu tố kịch bản trực quan mang lại giá trị cao nhất cho người học.
+6.2. Kiến nghị
+• Đối với Nhà trường & Sở GD&ĐT: Khuyến khích nhân rộng quy trình tạo học liệu AI song ngữ trong các câu lạc bộ NCKHKT và hoạt động đổi mới phương pháp dạy học.
+• Đối với Giáo viên Môn Toán & Tiếng Anh: Tăng cường phối hợp liên môn (CLIL), tận dụng bộ video làm phương tiện khởi động bài học hoặc giao nhiệm vụ trải nghiệm.
+PHẦN 7. KHAI BÁO SỬ DỤNG CÔNG NGHỆ SỐ VÀ TRÍ TUỆ NHÂN TẠO (AI DISCLOSURE)
+Tuân thủ Quy chế Cuộc thi NCKHKT (Thông tư 84/2026/TT-BGDĐT), nhóm nghiên cứu minh bạch khai báo việc sử dụng các công cụ AI trong dự án như sau:
+• Bảng 6. Khai báo chi tiết việc ứng dụng công cụ AI trong dự án
+Công cụ AI
+Mục đích sử dụng
+Phần AI hỗ trợ
+Phần học sinh tự làm & Kiểm chứng
+ChatGPT / Claude 3.5
+Gợi ý ý tưởng kịch bản & dịch thuật từ vựng Math EN
+Hỗ trợ dự thảo kịch bản thô và gợi ý danh mục từ vựng
+Học sinh tự giải toán, kiểm tra công thức, biên tập kịch bản chuẩn
+Midjourney / DALL-E 3
+Tạo hình ảnh bối cảnh minh họa thực tế
+Sinh hình ảnh 3D/minh họa bối cảnh theo Prompt
+Học sinh thiết kế Prompt, lọc hình ảnh chuẩn toán học, loại bỏ chi tiết nhiễu
+ElevenLabs / HeyGen
+Tạo giọng đọc song ngữ & ghép chuyển động
+Chuyển văn bản kịch bản thành giọng đọc truyền cảm
+Học sinh kiểm tra tốc độ thoại, căn chỉnh thời lượng và khớp phụ đề
+Microsoft Excel / SPSS
+Xử lý số liệu thống kê thực nghiệm
+Hỗ trợ tính toán điểm trung bình và biểu đồ
+Học sinh trực tiếp nhập dữ liệu thật, kiểm tra tính trung thực của kết quả
+(Cam kết: Nhóm nghiên cứu không sử dụng AI để tạo lập số liệu giả tạo hoặc làm thay nội dung nghiên cứu cốt lõi)
+TÀI LIỆU THAM KHẢO (REFERENCES)
+1. Bộ Giáo dục và Đào tạo (2026). Thông tư số 84/2026/TT-BGDĐT ngày 30/9/2026 ban hành Quy chế Cuộc thi nghiên cứu khoa học, kỹ thuật cấp quốc gia dành cho học sinh THCS và THPT.
+2. Bộ Giáo dục và Đào tạo (2018). Chương trình Giáo dục phổ thông môn Toán (Ban hành kèm theo Thông tư số 32/2018/TT-BGDĐT).
+3. Blum, W., & Leiß, D. (2007). How do students understand mathematical modelling problems? In Mathematical Modelling (ICTMA 12) (pp. 222-231). Horwood Publishing.
+4. Coyle, D., Hood, P., & Marsh, D. (2010). CLIL: Content and Language Integrated Learning. Cambridge University Press.
+5. Goldin, G. A. (2014). Mathematical representations. In Vital directions for mathematics education research (pp. 1-26). Springer, Springer.
+6. Mayer, R. E. (2021). Multimedia Learning (3rd ed.). Cambridge University Press.
+PHỤ LỤC
+Mẫu phiếu phản hồi học sinh (Song ngữ Việt - Anh)
+Mã người tham gia: [Mã ẩn danh]. Thang đo: 1 = Hoàn toàn không đồng ý; 2 = Không đồng ý; 3 = Phân vân; 4 = Đồng ý; 5 = Hoàn toàn đồng ý.
+Phát biểu đánh giá (Statement)
+1
+2
+3
+4
+5
+1. Video AI giúp em dễ dàng hình dung bối cảnh thực tế của bài toán. (The AI video helps me easily visualize the real-world context.
+□
+□
+□
+□
+☑
+2. Sau khi xem video, em xác định đúng các dữ kiện và ẩn số cần tìm. (After watching, I correctly identify given data and variables.)
+□
+□
+□
+□
+☑
+3. Thuật ngữ tiếng Anh Toán trong video dễ hiểu và bổ ích.(The Math English terminology in the video is clear and useful.)
+□
+□
+□
+□
+☑
+4. Các câu hỏi gợi mở giúp em tự lập được phương trình/mô hình toán. (Guided questions help me formulate the mathematical model myself.)
+□
+□
+□
+□
+☑
+5. Âm thanh giọng đọc AI và phụ đề song ngữ rõ ràng, chuẩn xác.(The AI voiceover and bilingual subtitles are clear and accurate.)
+□
+□
+□
+□
+☑
+6. Video không chứa chi tiết gây nhiễu làm em hiểu sai bài toán.(The video contains no distracting details causing misunderstanding.)
+□
+□
+□
+□
+☑

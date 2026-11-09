@@ -1,0 +1,29 @@
+{
+  "name": "math-english-ai-learn",
+  "version": "1.0.0",
+  "description": "Grade 10 Math-English CLIL Practical Mathematics Web App (KHKT 2026-2027, THPT Tran Van Kiet)",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "build": "node build.js",
+    "start": "node server.js",
+    "test": "node --test tests/*.test.js tests/**/*.test.js",
+    "test:watch": "node --test --watch tests/**/*.test.js",
+    "extract-assets": "python3 extract_assets.py"
+  },
+  "keywords": [
+    "khkt",
+    "clil",
+    "math-english",
+    "grade-10",
+    "vietnam-curriculum",
+    "trigonometry",
+    "quadratic-functions",
+    "optimization"
+  ],
+  "author": "Pham Nguyen Ti Na & Le Thanh Tam (THPT Tran Van Kiet)",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

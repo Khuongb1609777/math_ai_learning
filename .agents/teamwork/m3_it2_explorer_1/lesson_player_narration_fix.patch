@@ -1,0 +1,91 @@
+--- a/src/components/LessonPlayer.js
++++ b/src/components/LessonPlayer.js
+@@ -113,6 +113,7 @@ export class LessonPlayer {
+   destroy() {
+     this.detachEventListeners();
+     speech.stop();
++    this.isNarrationPlaying = false;
+     if (this.vocabTableInstance && typeof this.vocabTableInstance.destroy === 'function') {
+       this.vocabTableInstance.destroy();
+       this.vocabTableInstance = null;
+@@ -201,8 +202,15 @@ export class LessonPlayer {
+   setLesson(lessonId) {
+     speech.stop();
+-    if (this.vocabTableInstance && typeof this.vocabTableInstance.stopAudio === 'function') {
++    if (this.vocabTableInstance && typeof this.vocabTableInstance.destroy === 'function') {
++      this.vocabTableInstance.destroy();
++      this.vocabTableInstance = null;
++    } else if (this.vocabTableInstance && typeof this.vocabTableInstance.stopAudio === 'function') {
+       this.vocabTableInstance.stopAudio();
+     }
++    if (this.simulationInstance && typeof this.simulationInstance.destroy === 'function') {
++      this.simulationInstance.destroy();
++      this.simulationInstance = null;
++    }
++    this.isNarrationPlaying = false;
+     this.lesson = this.resolveLesson(lessonId);
+     this.currentSceneId = 1;
+     this.completedScenes = new Set([1]);
+@@ -261,6 +269,7 @@ export class LessonPlayer {
+   triggerStartWorksheet() {
+     speech.stop();
+     if (this.vocabTableInstance && typeof this.vocabTableInstance.stopAudio === 'function') {
+       this.vocabTableInstance.stopAudio();
+     }
++    this.isNarrationPlaying = false;
+     if (typeof this.onStartQuiz === 'function') {
+       this.onStartQuiz(this.lesson.id);
+     }
+@@ -690,6 +699,10 @@ export class LessonPlayer {
+     if (backBtn) {
+       backBtn.onclick = () => {
+         speech.stop();
++        if (this.vocabTableInstance && typeof this.vocabTableInstance.stopAudio === 'function') {
++          this.vocabTableInstance.stopAudio();
++        }
++        this.isNarrationPlaying = false;
+         this.onBack();
+       };
+     }
+@@ -754,6 +767,10 @@ export class LessonPlayer {
+     // 1. Mount VocabularyTable in Scene 3
+     if (this.currentSceneId === 3) {
++      if (this.vocabTableInstance && typeof this.vocabTableInstance.destroy === 'function') {
++        this.vocabTableInstance.destroy();
++        this.vocabTableInstance = null;
++      }
+       const vocabMount = this.container.querySelector('.vocabulary-table-mount-point');
+       if (vocabMount) {
+         try {
+@@ -773,11 +790,20 @@ export class LessonPlayer {
+         }
+       }
++    } else {
++      if (this.vocabTableInstance && typeof this.vocabTableInstance.destroy === 'function') {
++        this.vocabTableInstance.destroy();
++        this.vocabTableInstance = null;
++      }
+     }
+ 
+     // 2. Mount Dynamic Simulation in Scenes 2 & 4
+     const simMount = this.container.querySelector('.sim-viewport');
+     const simContainer = this.container.querySelector('.simulation-mount-container');
+     const simType = simContainer?.dataset?.simType || simContainer?.getAttribute?.('data-sim-type');
+     if (simMount && simType) {
++      if (this.simulationInstance && typeof this.simulationInstance.destroy === 'function') {
++        this.simulationInstance.destroy();
++        this.simulationInstance = null;
++      }
+       try {
+         const mod = await import('./MathSimulations.js');
+         const SimulationClass = mod.MathSimulations || mod.default;
+@@ -796,5 +822,9 @@ export class LessonPlayer {
+         this.renderSimulationFallback(simMount, simType);
+       }
++    } else {
++      if (this.simulationInstance && typeof this.simulationInstance.destroy === 'function') {
++        this.simulationInstance.destroy();
++        this.simulationInstance = null;
++      }
+     }
+   }

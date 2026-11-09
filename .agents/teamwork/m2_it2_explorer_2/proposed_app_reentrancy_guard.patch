@@ -1,0 +1,51 @@
+--- a/src/app.js
++++ b/src/app.js
+@@ -121,6 +121,10 @@
+     window.addEventListener('modal:open-showcase', () => {
+       this.handleOpenShowcase();
+     });
++
++    window.addEventListener('khkt:modal-closed', () => {
++      this.state.isShowcaseModalOpen = false;
++    });
+ 
+     // 5. Render Active View in #main-content
+     this.renderMainContent();
+@@ -170,6 +174,10 @@
+   /**
+    * Opens KHKT Research Showcase modal
+    */
+   async handleOpenShowcase() {
++    // Re-entrancy guard: prevent duplicate backdrop and listener leaks on rapid calls
++    if (this.state.isShowcaseModalOpen || (this.showcaseModal && this.showcaseModal.isOpen())) {
++      return;
++    }
+     this.state.isShowcaseModalOpen = true;
+     
+     // Dynamically attempt to load KhktShowcaseModal if available
+@@ -182,6 +190,10 @@
+     try {
+       const { KhktShowcaseModal } = await import('./components/KhktShowcaseModal.js');
+       if (KhktShowcaseModal) {
++        // Defensive cleanup of any stale previous instance before creating a new one
++        if (this.showcaseModal && typeof this.showcaseModal.close === 'function') {
++          this.showcaseModal.close();
++        }
+         this.showcaseModal = new KhktShowcaseModal({
+           container: modalRoot,
+           language: this.state.language,
+@@ -190,9 +202,14 @@
+         this.showcaseModal.mount(modalRoot);
+         return;
+       }
++      this.renderShowcaseModalFallback(modalRoot);
+     } catch (e) {
+       // Graceful inline fallback
+-      this.renderShowcaseModalFallback(modalRoot);
++      try {
++        this.renderShowcaseModalFallback(modalRoot);
++      } catch (fallbackError) {
++        this.state.isShowcaseModalOpen = false;
++      }
+     }
+   }

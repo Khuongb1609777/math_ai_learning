@@ -1,0 +1,126 @@
+--- a/src/components/LessonPlayer.js
++++ b/src/components/LessonPlayer.js
+@@ -201,8 +201,18 @@
+   setLesson(lessonId) {
+     speech.stop();
+-    if (this.vocabTableInstance && typeof this.vocabTableInstance.stopAudio === 'function') {
+-      this.vocabTableInstance.stopAudio();
++    this.isNarrationPlaying = false;
++    if (this.vocabTableInstance) {
++      if (typeof this.vocabTableInstance.stopAudio === 'function') {
++        this.vocabTableInstance.stopAudio();
++      }
++      if (typeof this.vocabTableInstance.destroy === 'function') {
++        this.vocabTableInstance.destroy();
++      }
++      this.vocabTableInstance = null;
++    }
++    if (this.simulationInstance && typeof this.simulationInstance.destroy === 'function') {
++      this.simulationInstance.destroy();
++      this.simulationInstance = null;
+     }
+     this.lesson = this.resolveLesson(lessonId);
+     this.currentSceneId = 1;
+@@ -217,9 +227,19 @@
+   goToScene(sceneId) {
+     speech.stop();
+-    if (this.vocabTableInstance && typeof this.vocabTableInstance.stopAudio === 'function') {
+-      this.vocabTableInstance.stopAudio();
++    this.isNarrationPlaying = false;
++    if (this.vocabTableInstance) {
++      if (typeof this.vocabTableInstance.stopAudio === 'function') {
++        this.vocabTableInstance.stopAudio();
++      }
++      if (typeof this.vocabTableInstance.destroy === 'function') {
++        this.vocabTableInstance.destroy();
++      }
++      this.vocabTableInstance = null;
++    }
++    if (this.simulationInstance && typeof this.simulationInstance.destroy === 'function') {
++      this.simulationInstance.destroy();
++      this.simulationInstance = null;
+     }
+-    this.isNarrationPlaying = false;
+     const clamped = Math.max(1, Math.min(5, Number(sceneId) || 1));
+     this.currentSceneId = clamped;
+     this.completedScenes.add(clamped);
+@@ -260,8 +280,15 @@
+   triggerStartWorksheet() {
+     speech.stop();
+-    if (this.vocabTableInstance && typeof this.vocabTableInstance.stopAudio === 'function') {
+-      this.vocabTableInstance.stopAudio();
++    this.isNarrationPlaying = false;
++    if (this.vocabTableInstance) {
++      if (typeof this.vocabTableInstance.stopAudio === 'function') {
++        this.vocabTableInstance.stopAudio();
++      }
++      if (typeof this.vocabTableInstance.destroy === 'function') {
++        this.vocabTableInstance.destroy();
++      }
++      this.vocabTableInstance = null;
+     }
+     if (typeof this.onStartQuiz === 'function') {
+       this.onStartQuiz(this.lesson.id);
+@@ -584,7 +611,7 @@
+           <!-- 4. Interactive Dynamic Simulation Stage (Scenes 2 & 4) -->
+-          ${scene.interactiveType ? `
++          ${(scene.interactiveType && [2, 4].includes(this.currentSceneId)) ? `
+             <div class="simulation-mount-container" data-sim-type="${scene.interactiveType}">
+               <div class="sim-stage p-4 rounded-2xl border border-slate-200 bg-gradient-to-b from-sky-50 to-emerald-50">
+                 <div class="flex items-center justify-between mb-3">
+@@ -751,6 +778,16 @@
+   async mountDynamicSubComponents() {
+     if (!this.container || typeof this.container.querySelector !== 'function') return;
+ 
++    // Safety cleanup of any lingering instances before mounting current scene components
++    if (this.vocabTableInstance && typeof this.vocabTableInstance.destroy === 'function') {
++      this.vocabTableInstance.destroy();
++      this.vocabTableInstance = null;
++    }
++    if (this.simulationInstance && typeof this.simulationInstance.destroy === 'function') {
++      this.simulationInstance.destroy();
++      this.simulationInstance = null;
++    }
++
+     // 1. Mount VocabularyTable in Scene 3
+     if (this.currentSceneId === 3) {
+       const vocabMount = this.container.querySelector('.vocabulary-table-mount-point');
+@@ -758,6 +795,7 @@
+         try {
+           const mod = await import('./VocabularyTable.js');
++          if (this.currentSceneId !== 3) return;
+           const VocabTableClass = mod.VocabularyTable || mod.default;
+           if (VocabTableClass) {
+             this.vocabTableInstance = new VocabTableClass({
+@@ -769,17 +807,18 @@
+             return;
+           }
+         } catch (e) {
+-          this.renderVocabularyFallback(vocabMount);
++          if (this.currentSceneId === 3) this.renderVocabularyFallback(vocabMount);
+         }
+       }
+     }
+ 
+     // 2. Mount Dynamic Simulation in Scenes 2 & 4
+-    const simMount = this.container.querySelector('.sim-viewport');
+-    const simContainer = this.container.querySelector('.simulation-mount-container');
+-    const simType = simContainer?.dataset?.simType || simContainer?.getAttribute?.('data-sim-type');
+-    if (simMount && simType) {
++    if ([2, 4].includes(this.currentSceneId)) {
++      const simMount = this.container.querySelector('.sim-viewport');
++      const simContainer = this.container.querySelector('.simulation-mount-container');
++      const simType = simContainer?.dataset?.simType || simContainer?.getAttribute?.('data-sim-type');
++      if (simMount && simType) {
+       try {
+         const mod = await import('./MathSimulations.js');
++        if (![2, 4].includes(this.currentSceneId)) return;
+         const SimulationClass = mod.MathSimulations || mod.default;
+         if (SimulationClass) {
+           this.simulationInstance = new SimulationClass({
+@@ -796,5 +835,6 @@
+         }
+       }
+     }
++    }
+   }

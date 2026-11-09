@@ -1,0 +1,67 @@
+{
+  "generatedAt": "2026-11-07T07:18:34.017402Z",
+  "sourceDocx": "KHKT-Ti Na.docx",
+  "totalImages": 5,
+  "assets": [
+    {
+      "filename": "image1.png",
+      "alias": "khkt_logo.png",
+      "path": "/assets/khkt/image1.png",
+      "aliasPath": "/assets/khkt/khkt_logo.png",
+      "title": "KHKT Project Crest & Logo",
+      "caption": "Biểu trưng Dự án KHKT & Tiêu đề THPT Trần Văn Kiết",
+      "role": "branding",
+      "dimensions": "1280x1280",
+      "sizeBytes": 1521465,
+      "sha256": "dfa9952cc5cf576a8d32e67b46fb34f2560634a4271e0d4519b3a0536c31f61b"
+    },
+    {
+      "filename": "image2.png",
+      "alias": "hinh1_quy_trinh_7_buoc.png",
+      "path": "/assets/khkt/image2.png",
+      "aliasPath": "/assets/khkt/hinh1_quy_trinh_7_buoc.png",
+      "title": "Hình 1: Sơ đồ Quy trình 7 bước chuẩn hóa",
+      "caption": "Sơ đồ Quy trình 7 bước phát triển Video AI học Toán song ngữ",
+      "role": "pedagogy_showcase",
+      "dimensions": "1536x1024",
+      "sizeBytes": 2034981,
+      "sha256": "f846271379255e357feba2c7165871dec8f4c40653382edb8843ed3b575edbc4"
+    },
+    {
+      "filename": "image3.png",
+      "alias": "hinh2_giao_dien_video_ai.png",
+      "path": "/assets/khkt/image3.png",
+      "aliasPath": "/assets/khkt/hinh2_giao_dien_video_ai.png",
+      "title": "Hình 2: Mô phỏng giao diện Video AI bài giảng",
+      "caption": "Giao diện mô phỏng Video AI bài giảng Hải đăng với kịch bản 5 phân cảnh",
+      "role": "player_mockup",
+      "dimensions": "1081x595",
+      "sizeBytes": 857341,
+      "sha256": "372afe8033ed558426d6457f30b338c3b364206f7c246d51090679e80232ef51"
+    },
+    {
+      "filename": "image4.png",
+      "alias": "hinh3_bieu_do_thuc_nghiem.png",
+      "path": "/assets/khkt/image4.png",
+      "aliasPath": "/assets/khkt/hinh3_bieu_do_thuc_nghiem.png",
+      "title": "Hình 3: Biểu đồ kết quả thực nghiệm sư phạm",
+      "caption": "Kết quả khảo sát trước và sau tác động trên 400 học sinh (+2.43 điểm)",
+      "role": "empirical_results",
+      "dimensions": "2970x1620",
+      "sizeBytes": 157568,
+      "sha256": "313c0c234d6c6406aae6fa9068ff26bf14d735171c16986d86445b0cac9191ed"
+    },
+    {
+      "filename": "image5.png",
+      "alias": "hinh4_bieu_do_khao_sat.png",
+      "path": "/assets/khkt/image5.png",
+      "aliasPath": "/assets/khkt/hinh4_bieu_do_khao_sat.png",
+      "title": "Hình 4: Biểu đồ khảo sát mức độ hứng thú & tự tin",
+      "caption": "Mức độ hứng thú (89.5%) và tự tin của học sinh đối với Video AI Song ngữ (N=400)",
+      "role": "survey_results",
+      "dimensions": "2041x1530",
+      "sizeBytes": 159226,
+      "sha256": "1fd27bbdbb440ad4567e204ba8d63f2dadbaeb380cbb21bec1a4b7ed0a378111"
+    }
+  ]
+}

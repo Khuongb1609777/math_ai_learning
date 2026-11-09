@@ -1,0 +1,112 @@
+--- src/app.js
++++ src/app.js
+@@ -198,11 +198,16 @@
+     }
+ 
++    // Tier 1: Modal instance already exists
+     if (this.showcaseModal) {
+-      const isAttached = Boolean(modalRoot && modalRoot.children && modalRoot.children.includes(this.showcaseModal.modalEl));
++      const isAttached = Boolean(
++        modalRoot &&
++        modalRoot.children &&
++        (Array.isArray(modalRoot.children)
++          ? modalRoot.children.includes(this.showcaseModal.modalEl)
++          : this.showcaseModal.modalEl?.parentNode === modalRoot)
++      );
+       if (this.showcaseModal.isOpen() && isAttached) {
+         this.state.isShowcaseModalOpen = true;
+         return;
+       }
+       this.state.isShowcaseModalOpen = true;
+       if (this.showcaseModal.options.container !== modalRoot) {
+         this.showcaseModal.options.container = modalRoot;
+       }
+       this.showcaseModal.open();
+       return;
+     }
+ 
+-    // Re-entrancy guard during in-flight dynamic imports
++    // Tier 2: Module is already imported and cached
++    if (this._KhktShowcaseModalClass) {
++      this.state.isShowcaseModalOpen = true;
++      this.showcaseModal = new this._KhktShowcaseModalClass({
++        container: modalRoot,
++        language: this.state.language,
++        onClose: this.handleCloseShowcase
++      });
++      this.showcaseModal.mount(modalRoot);
++      return;
++    }
++
++    // Tier 3: In-flight Async Dynamic Import Locking & Re-Entrancy Coalescing
+     if (this._showcaseImportPromise) {
+       this.state.isShowcaseModalOpen = true;
+-      await this._showcaseImportPromise;
++      try {
++        await this._showcaseImportPromise;
++      } catch (err) {
++        if (!this.state.isShowcaseModalOpen) return;
++      }
++
++      // Check if user or controller cancelled open while import was pending
+       if (!this.state.isShowcaseModalOpen) return;
++
++      // Primary caller has already mounted this.showcaseModal or rendered fallback
+       if (this.showcaseModal) {
+-        if (!this.showcaseModal.isOpen()) {
++        const isAttached = Boolean(
++          modalRoot &&
++          modalRoot.children &&
++          (Array.isArray(modalRoot.children)
++            ? modalRoot.children.includes(this.showcaseModal.modalEl)
++            : this.showcaseModal.modalEl?.parentNode === modalRoot)
++        );
++        if (!isAttached || !this.showcaseModal.isOpen()) {
+           this.showcaseModal.open();
+         }
+       }
+       return;
+     }
+ 
++    // Tier 4: Primary Dynamic Import Initiator
+     this.state.isShowcaseModalOpen = true;
+ 
+     try {
+       this._showcaseImportPromise = import('./components/KhktShowcaseModal.js');
+-      const { KhktShowcaseModal } = await this._showcaseImportPromise;
++      const module = await this._showcaseImportPromise;
++      const KhktShowcaseModal = module?.KhktShowcaseModal;
++      this._KhktShowcaseModalClass = KhktShowcaseModal;
+       this._showcaseImportPromise = null;
+ 
+       // Check if user requested close while import was in flight
+       if (!this.state.isShowcaseModalOpen) {
+         return;
+       }
+ 
+       if (KhktShowcaseModal) {
+         if (!this.showcaseModal) {
+           this.showcaseModal = new KhktShowcaseModal({
+             container: modalRoot,
+             language: this.state.language,
+             onClose: this.handleCloseShowcase
+           });
+           this.showcaseModal.mount(modalRoot);
+         } else {
+           if (this.showcaseModal.options.container !== modalRoot) {
+             this.showcaseModal.options.container = modalRoot;
+           }
+           this.showcaseModal.open();
+         }
+         return;
+       }
+       this.renderShowcaseModalFallback(modalRoot);
+     } catch (e) {
+       this._showcaseImportPromise = null;
+       if (!this.state.isShowcaseModalOpen) return;
+       try {
+         this.renderShowcaseModalFallback(modalRoot);
+       } catch (fallbackError) {
+         this.state.isShowcaseModalOpen = false;
+       }
+     }

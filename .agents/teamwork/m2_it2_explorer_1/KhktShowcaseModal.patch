@@ -1,0 +1,112 @@
+--- a/src/components/KhktShowcaseModal.js
++++ b/src/components/KhktShowcaseModal.js
+@@ -433,6 +433,8 @@
+     this.previousActiveElement = null;
+     this.boundKeyHandler = this.handleKeyDown.bind(this);
+     this.showingFigureId = null;
++    this.closeTimeout = null;
++    this.focusTimeout = null;
+ 
+     // Singleton caching
+     KhktShowcaseModal.instance = this;
+@@ -487,6 +489,12 @@
+     if (typeof document === 'undefined') return;
+     injectModalStyles();
+ 
++    // Cancel pending close timeout if modal is reopened before closing animation completes
++    if (this.closeTimeout) {
++      clearTimeout(this.closeTimeout);
++      this.closeTimeout = null;
++    }
++
+     if (tab) {
+       this.activeTab = tab;
+     }
+@@ -511,12 +519,18 @@
+       }
+     });
+ 
+-    // Add ESC key listener
++    // Add ESC key listener (remove first to avoid duplicate bindings)
++    document.removeEventListener('keydown', this.boundKeyHandler);
+     document.addEventListener('keydown', this.boundKeyHandler);
+ 
+-    // Focus close button or first interactive element
+-    setTimeout(() => {
++    // Focus close button or first interactive element (cancel existing timer)
++    if (this.focusTimeout) {
++      clearTimeout(this.focusTimeout);
++      this.focusTimeout = null;
++    }
++    this.focusTimeout = setTimeout(() => {
+       const closeBtn = this.modalEl?.querySelector('.khkt-modal-close-btn');
+       if (closeBtn) closeBtn.focus();
++      this.focusTimeout = null;
+     }, 50);
+ 
+     // Dispatch custom event
+@@ -530,12 +544,24 @@
+   close() {
+     if (!this.modalEl) return;
+ 
++    // Cancel any existing close timeout before scheduling
++    if (this.closeTimeout) {
++      clearTimeout(this.closeTimeout);
++      this.closeTimeout = null;
++    }
++
++    // Cancel pending focus timeout if modal is closed before 50ms focus trigger
++    if (this.focusTimeout) {
++      clearTimeout(this.focusTimeout);
++      this.focusTimeout = null;
++    }
++
+     this.modalEl.classList.remove('is-open');
+     this.modalEl.setAttribute('aria-hidden', 'true');
+ 
+     document.removeEventListener('keydown', this.boundKeyHandler);
+     document.body.style.overflow = '';
+ 
+-    setTimeout(() => {
++    this.closeTimeout = setTimeout(() => {
+       if (this.modalEl && this.modalEl.parentNode) {
+         this.modalEl.parentNode.removeChild(this.modalEl);
+         this.modalEl = null;
+@@ -547,6 +573,7 @@
+       if (typeof this.options.onClose === 'function') {
+         this.options.onClose();
+       }
++      this.closeTimeout = null;
+     }, 250);
+ 
+     // Dispatch custom event
+@@ -562,6 +589,28 @@
+   }
+ 
+   /**
++   * Complete teardown of modal instance, timers, DOM nodes and listeners.
++   */
++  destroy() {
++    if (this.closeTimeout) {
++      clearTimeout(this.closeTimeout);
++      this.closeTimeout = null;
++    }
++    if (this.focusTimeout) {
++      clearTimeout(this.focusTimeout);
++      this.focusTimeout = null;
++    }
++    if (typeof document !== 'undefined') {
++      document.removeEventListener('keydown', this.boundKeyHandler);
++      document.body.style.overflow = '';
++    }
++    if (this.modalEl && this.modalEl.parentNode) {
++      this.modalEl.parentNode.removeChild(this.modalEl);
++    }
++    this.modalEl = null;
++    if (KhktShowcaseModal.instance === this) {
++      KhktShowcaseModal.instance = null;
++    }
++  }
++
++  /**
+    * Switches active navigation tab.
